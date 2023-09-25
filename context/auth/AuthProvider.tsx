@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { AuthContext } from "./AuthContext";
 import { useRouter } from "next/router";
+import { signOut, useSession } from "next-auth/react";
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -26,26 +27,35 @@ const baseUrl = "http://localhost:3001/api";
 
 export const AuthProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE);
+  const { data, status } = useSession();
 
   useEffect(() => {
-    checkToken();
-  }, []);
-
-  const checkToken = async () => {
-    try {
-      const { data } = await axios.get(`${baseUrl}/login/renew`, {
-        headers: {
-          "x-token": Cookies.get("token"),
-        },
-      });
-      const { token, usuario } = data;
-      console.log(token, usuario);
-      Cookies.set("token", token);
-      dispatch({ type: "[Auth] - Login", payload: usuario });
-    } catch (error) {
-      Cookies.remove("token");
+    if (status === "authenticated") {
+      console.log({ user: data?.user });
+      dispatch({ type: "[Auth] - Login", payload: data?.user as IUser });
     }
-  };
+    // console.log("No hay sesion");
+  }, [status, data]);
+
+  // useEffect(() => {
+  //   checkToken();
+  // }, []);
+
+  // const checkToken = async () => {
+  //   try {
+  //     const { data } = await axios.get(`${baseUrl}/login/renew`, {
+  //       headers: {
+  //         "x-token": Cookies.get("token"),
+  //       },
+  //     });
+  //     const { token, usuario } = data;
+  //     console.log(token, usuario);
+  //     Cookies.set("token", token);
+  //     dispatch({ type: "[Auth] - Login", payload: usuario });
+  //   } catch (error) {
+  //     Cookies.remove("token");
+  //   }
+  // };
 
   const loginUser = async (
     email: string,
@@ -98,12 +108,29 @@ export const AuthProvider = ({ children }: Props) => {
     }
   };
 
+  const logoutUser = () => {
+    Cookies.remove('cart');
+    Cookies.remove('firstName');
+    Cookies.remove('lastName');
+    Cookies.remove('address');
+    Cookies.remove('address2');
+    Cookies.remove('zip');
+    Cookies.remove('city');
+    Cookies.remove('country');
+    Cookies.remove('phone');
+    
+    signOut();
+    // router.reload();
+    // Cookies.remove('token');
+}
+
   return (
     <AuthContext.Provider
       value={{
         ...state,
         loginUser,
         registerUser,
+        logoutUser,
       }}
     >
       {children}

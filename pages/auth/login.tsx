@@ -3,9 +3,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Layout } from "../../components/layouts/Layout";
 import { useForm } from "../../hooks/useForm";
+import { GetServerSideProps } from 'next'
+
 import { AuthLayout } from "@/components/layouts/AuthLayout";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import { signIn, getSession, getProviders } from "next-auth/react";
+
 import { AuthContext } from "@/context/auth";
 interface FormValues {
   email: string;
@@ -13,7 +17,7 @@ interface FormValues {
 }
 function AuthP() {
   const router = useRouter();
-  const { loginUser, user } = useContext(AuthContext);
+  // const { loginUser}} = useContext(AuthContext);
 
   const { handleChange, formulario } = useForm<FormValues>({
     email: "",
@@ -25,25 +29,24 @@ function AuthP() {
   const onSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     // setShowError(false);
+    await signIn("credentials", {
+      email: formulario.email,
+      password: formulario.password,
+    });
+    // const isValidLogin = await loginUser(formulario.email, formulario.password);
 
-    const isValidLogin = await loginUser(formulario.email, formulario.password);
-
-    if (!isValidLogin) {
-      setShowError(true);
-      setTimeout(() => setShowError(false), 3000);
-      return;
-    }
-
-    // Todo: navegar a la pantalla que el usuario estaba
-    router.replace("/reports");
+    // if (!isValidLogin) {
+    //   setShowError(true);
+    //   setTimeout(() => setShowError(false), 3000);
+    //   return;
+    // }
   };
 
-  //Si hay un usuario logueado, redireccionar a la página de reportes
-  useEffect(() => {
-    if (user) {
-      router.replace("/reports");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     router.replace("/");
+  //   }
+  // }, [user]);
 
   return (
     <Layout title="Auth">
@@ -142,5 +145,28 @@ function AuthP() {
     </Layout>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+  query,
+}) => {
+  const session = await getSession({ req });
+  // console.log({session});
+
+  const { p = "/" } = query;
+
+  if (session) {
+    return {
+      redirect: {
+        destination: p.toString(),
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
 
 export default AuthP;

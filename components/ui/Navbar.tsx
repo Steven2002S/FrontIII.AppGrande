@@ -3,34 +3,45 @@
 // import Image from "next/image";
 import Link from "next/link";
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
-import { Dialog, Popover, Transition } from '@headlessui/react'
+import React, { Fragment, useContext, useState } from "react";
+import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
   UsersIcon,
   AcademicCapIcon,
   Bars3Icon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+} from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { AuthContext } from "@/context/auth";
+import { useRouter } from "next/router";
 
 const products = [
-  { name: 'Filosofía Institucional ', href: '/filosofia.html', icon: AcademicCapIcon },
-  { name: 'Nuestro Equipo', href: '/equipo.html', icon: UsersIcon },
-]
-
+  {
+    name: "Filosofía Institucional ",
+    href: "/filosofia.html",
+    icon: AcademicCapIcon,
+  },
+  { name: "Nuestro Equipo", href: "/equipo.html", icon: UsersIcon },
+];
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // const { loginUser } = useContext(AuthContext);
+  const { isLoggedIn,logoutUser } = useContext(AuthContext);
 
-
+  const router = useRouter();
+  const currentPath = router.pathname;
+  console.log(currentPath);
+  
 
   return (
     <>
       <header className="header bg-color-terciario fixed top-0 z-10 w-full title">
-        <nav className="mx-auto flex max-w-7xl items-center lg:justify-between md:justify-between sm:justify-between px-6 py-4 lg:px-0 lg:relative" aria-label="Global">
+        <nav
+          className="mx-auto flex max-w-7xl items-center lg:justify-between md:justify-between sm:justify-between px-6 py-4 lg:px-0 lg:relative"
+          aria-label="Global"
+        >
           <div className="hidden lg:flex">
             <Link href={"/"} className="-m-1.5 p-1.5">
               <span className="flex text-white justify-center items-center">
@@ -42,7 +53,6 @@ const Navbar = () => {
                   alt="logo"
                   className="mr-3 rounded-full"
                 />
-
               </span>
             </Link>
           </div>
@@ -60,10 +70,20 @@ const Navbar = () => {
             <Link href={"/"} className="text-sm leading-6 text-color-primario">
               Inicio
             </Link>
-            <Popover className="relative" onMouseOver={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-              <Popover.Button onClick={() => setOpen(!open)} className="flex items-center text-sm leading-6">
+            <Popover
+              className="relative"
+              onMouseOver={() => setOpen(true)}
+              onMouseLeave={() => setOpen(false)}
+            >
+              <Popover.Button
+                onClick={() => setOpen(!open)}
+                className="flex items-center text-sm leading-6"
+              >
                 Quiénes somos
-                <ChevronDownIcon className="h-5 w-5 flex-none text-color-primario" aria-hidden="true" />
+                <ChevronDownIcon
+                  className="h-5 w-5 flex-none text-color-primario"
+                  aria-hidden="true"
+                />
               </Popover.Button>
               <Transition
                 show={open}
@@ -82,14 +102,19 @@ const Navbar = () => {
                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-200"
                       >
                         <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                          <item.icon className="h-6 w-6 text-gray-600 group-hover:text-color-secondary" aria-hidden="true" />
+                          <item.icon
+                            className="h-6 w-6 text-gray-600 group-hover:text-color-secondary"
+                            aria-hidden="true"
+                          />
                         </div>
                         <div className="flex-auto">
-                          <Link href={item.href} className="block text-gray-900 group-hover:text-color-secondary">
+                          <Link
+                            href={item.href}
+                            className="block text-gray-900 group-hover:text-color-secondary"
+                          >
                             {item.name}
                             <span className="absolute inset-0" />
                           </Link>
-
                         </div>
                       </div>
                     ))}
@@ -97,15 +122,36 @@ const Navbar = () => {
                 </Popover.Panel>
               </Transition>
             </Popover>
-            <Link href={"/reports.html"} className="text-sm leading-6 text-color-primario">
-              Reportes
-            </Link>
-            <Link href={"/contact.html"} className="text-sm leading-6 text-color-primario">
+
+            {isLoggedIn && currentPath === "/reports" ? (
+              <span 
+                onClick={() => logoutUser()}
+              className="text-sm leading-6 text-color-primario cursor-pointer">
+                Cerrar Sesión
+              </span>
+            ) : (
+              <Link
+                href={"/reports.html"}
+                className="text-sm leading-6 text-color-primario"
+              >
+                Reportes
+              </Link>
+            )}
+
+            <Link
+              href={"/contact.html"}
+              className="text-sm leading-6 text-color-primario"
+            >
               Contacto
             </Link>
           </Popover.Group>
         </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
           <div className="fixed inset-0 z-10" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">

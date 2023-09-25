@@ -15,7 +15,7 @@ const nextConfig = {
   images: {
     unoptimized : true,
 },
-basePath:'/SeguridadESPE'
+// basePath:'/SeguridadESPE'
 }
 
 module.exports = withTM(nextConfig)
