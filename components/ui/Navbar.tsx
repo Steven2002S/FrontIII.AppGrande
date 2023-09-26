@@ -126,7 +126,7 @@ const Navbar = () => {
             {isLoggedIn && currentPath === "/reports" ? (
               <span 
                 onClick={() => logoutUser()}
-              className="text-sm leading-6 text-color-primario cursor-pointer">
+              className="text-sm leading-6 text-red-500 cursor-pointer">
                 Cerrar Sesión
               </span>
             ) : (

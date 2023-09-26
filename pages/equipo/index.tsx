@@ -101,24 +101,8 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/dmkvix7ds/image/upload/v1695635911/majo_lmlvyp.jpg" />
-          <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">María Párraga</h2>
-            <p className="text-gray-500">Estudiante</p>
-          </div>
-        </div>
-      </div>
-      <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-          <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/dmkvix7ds/image/upload/c_scale,h_90,w_80/v1695635915/vinicio_tc15vc.jpg" />
-          <div className="flex-grow">
-            <h2 className="text-gray-900 title-font font-medium">Vinicio Borja</h2>
-            <p className="text-gray-500">Estudiante</p>
-          </div>
-        </div>
-      </div>
+
+
     </div>
   </div>
 </section>

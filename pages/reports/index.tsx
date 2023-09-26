@@ -1160,7 +1160,7 @@ const ReportsPage = () => {
        
           <div className="text-center w-full px-4 py-4 bg-white rounded-lg shadow-lg mb-4">
             <h1 className="title text-3xl color-gray-light font-bold">
-              Analítica Emergencias Comunitarias
+            Analítica de Incidentes Unidades Educativas
             </h1>
     
      
