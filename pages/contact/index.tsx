@@ -181,7 +181,7 @@ const ContactPage = () => {
           error: ""
         })
         // Tienes que cambiar esta direccion a donde vaya a quedar alojado tu backend
-        let response = await fetch("http://192.188.58.82:3000/api/email/send", {
+        let response = await fetch("http://192.188.58.82:3000/api/v2/email/send", {
           method: "POST",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
@@ -234,7 +234,7 @@ const ContactPage = () => {
               <Image
                 width={1920}
                 height={1080}
-                src="/SeguridadESPE/images/espec2c.jpeg"
+                src="/SeguridadVinculacion/images/espec2c.jpeg"
                 className="object-cover object-center"
                 alt="Persona 1" />
             </div>

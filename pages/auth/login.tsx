@@ -17,7 +17,7 @@ interface FormValues {
 }
 function AuthP() {
   const router = useRouter();
-  // const { loginUser}} = useContext(AuthContext);
+  const { user} = useContext(AuthContext);
 
   const { handleChange, formulario } = useForm<FormValues>({
     email: "",
@@ -33,6 +33,8 @@ function AuthP() {
       email: formulario.email,
       password: formulario.password,
     });
+
+    
     // const isValidLogin = await loginUser(formulario.email, formulario.password);
 
     // if (!isValidLogin) {
@@ -42,11 +44,11 @@ function AuthP() {
     // }
   };
 
-  // useEffect(() => {
-  //   if (user) {
-  //     router.replace("/");
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (user?.uid) {
+      router.replace("/reports");
+    }
+  }, [user]);
 
   return (
     <Layout title="Auth">

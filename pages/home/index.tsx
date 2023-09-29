@@ -159,7 +159,7 @@ const HomePage = () => {
                         >
                           <div>
                             <Image
-                              src="/SeguridadESPE/images/google-play-logo.svg"
+                              src="/SeguridadVinculacion/images/google-play-logo.svg"
                               width={27}
                               height={27}
                               alt="hero"
@@ -173,7 +173,7 @@ const HomePage = () => {
                         >
                           <div>
                             <Image
-                              src="/SeguridadESPE/images/icons8-apple-logo.svg"
+                              src="/SeguridadVinculacion/images/icons8-apple-logo.svg"
                               width={30}
                               height={30}
                               alt="hero"
@@ -188,7 +188,7 @@ const HomePage = () => {
                 <div className="w-full lg:w-1/2 h-full overflow-hidden">
                   <Animate.MoveIn>
                     <div className="flex h-full justify-center">
-                      <Image src="/SeguridadESPE/images/phone2.png" width={500} height={500} className="object-contain move-in" alt="logo" />
+                      <Image src="/SeguridadVinculacion/images/phone2.png" width={500} height={500} className="object-contain move-in" alt="logo" />
                     </div>
                   </Animate.MoveIn>
                 </div>
@@ -205,7 +205,7 @@ const HomePage = () => {
               </div>
               <div className="px-10 lg:px-32 flex justify-center mb-12">
                 <video controls className="w-full" style={{ maxWidth: "820px", height: "auto" }}>
-                  <source src="/SeguridadESPE/images/SeguridadESPE-03.mp4" type="video/mp4" />
+                  <source src="/SeguridadVinculacion/images/SeguridadVinculacion-03.mp4" type="video/mp4" />
                   Tu navegador no admite el elemento de video.
                 </video>
               </div>
@@ -220,7 +220,7 @@ const HomePage = () => {
             <Animate.MoveIn>
               <div className="w-full flex flex-col justify-center gap-y-10 lg:gap-y-0 items-center lg:flex-row">
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end overflow-hidden">
-                  <Image width={550} height={500} src="/SeguridadESPE/images/phone3.png" className="move-in" alt="phone3" />
+                  <Image width={550} height={500} src="/SeguridadVinculacion/images/phone3.png" className="move-in" alt="phone3" />
                 </div>
                 <div className="w-full lg:w-1/2 h-full flex items-center lg:items-end pb-16 overflow-hidden">
                   <div className="text-start px-10 lg:px-0 h-full w-full move-in">
@@ -264,7 +264,7 @@ const HomePage = () => {
                 <div className="w-full flex flex-col gap-x-0 lg:flex-row lg:gap-x-10 gap-y-5">
                   <div className="flex flex-col w-full lg:w-1/5">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/SeguridadESPE/images/reporte.png" />
+                      <img className="mb-1 " width="55" height="55" src="/SeguridadVinculacion/images/reporte.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -274,7 +274,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/5">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/SeguridadESPE/images/sos.png" />
+                      <img className="mb-1 " width="55" height="55" src="/SeguridadVinculacion/images/sos.png" />
 
                     </div>
                     <div className="px-2">
@@ -316,7 +316,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/5">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/SeguridadESPE/images/agregar-direccion.png" />
+                      <img className="mb-1 " width="60" height="60" src="/SeguridadVinculacion/images/agregar-direccion.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -335,7 +335,7 @@ const HomePage = () => {
                 <div className="w-full flex flex-col gap-x-0 lg:flex-row lg:gap-x-10 gap-y-5">
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/SeguridadESPE/images/comunidad.png" />
+                      <img className="mb-1 " width="60" height="60" src="/SeguridadVinculacion/images/comunidad.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -345,7 +345,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/SeguridadESPE/images/estadisticas.png" />
+                      <img className="mb-1 " width="55" height="55" src="/SeguridadVinculacion/images/estadisticas.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -354,7 +354,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/SeguridadESPE/images/smsimpacto.png" />
+                      <img className="mb-1 " width="60" height="60" src="/SeguridadVinculacion/images/smsimpacto.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -364,7 +364,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/SeguridadESPE/images/alarma.png" />
+                      <img className="mb-1 " width="60" height="60" src="/SeguridadVinculacion/images/alarma.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -388,44 +388,44 @@ const HomePage = () => {
                 <div className="overflow-hidden">
                   <Animate.MoveIn>
                     <div className="lg:flex flex-col justify-center items-center hidden">
-                      <Image width={230} height={230} src="/SeguridadESPE/images/mapa.jpg" className="rounded-lg shadow-lg" alt="mapa" />
+                      <Image width={230} height={230} src="/SeguridadVinculacion/images/mapa.jpg" className="rounded-lg shadow-lg" alt="mapa" />
                     </div>
                   </Animate.MoveIn>
                 </div>
-                <Image width={230} height={230} src="/SeguridadESPE/images/mapa.jpg" className="rounded-lg shadow-lg lg:hidden" alt="mapa" />
+                <Image width={230} height={230} src="/SeguridadVinculacion/images/mapa.jpg" className="rounded-lg shadow-lg lg:hidden" alt="mapa" />
                 <h3 className="mt-4 text-2xl">Mapa</h3>
               </div>
               <div className="text-center flex flex-col items-center">
                 <div className="overflow-hidden">
                   <Animate.MoveIn>
                     <div className="lg:flex flex-col justify-center items-center hidden">
-                      <Image width={230} height={230} src="/SeguridadESPE/images/noticias.png" className="rounded-lg shadow-lg" alt="noticias" />
+                      <Image width={230} height={230} src="/SeguridadVinculacion/images/noticias.png" className="rounded-lg shadow-lg" alt="noticias" />
                     </div>
                   </Animate.MoveIn>
                 </div>
-                <Image width={230} height={230} src="/SeguridadESPE/images/noticias.png" className="rounded-lg shadow-lg lg:hidden" alt="noticias" />
+                <Image width={230} height={230} src="/SeguridadVinculacion/images/noticias.png" className="rounded-lg shadow-lg lg:hidden" alt="noticias" />
                 <h3 className="mt-4 text-2xl">Noticias</h3>
               </div>
               <div className="text-center flex flex-col items-center">
                 <div className="overflow-hidden">
                   <Animate.MoveIn>
                     <div className="lg:flex flex-col justify-center items-center hidden">
-                      <Image width={230} height={230} src="/SeguridadESPE/images/grupos.jpg" className="rounded-lg shadow-lg" alt="grupos" />
+                      <Image width={230} height={230} src="/SeguridadVinculacion/images/grupos.jpg" className="rounded-lg shadow-lg" alt="grupos" />
                     </div>
                   </Animate.MoveIn>
                 </div>
-                <Image width={230} height={230} src="/SeguridadESPE/images/grupos.jpg" className="rounded-lg shadow-lg lg:hidden" alt="grupos" />
+                <Image width={230} height={230} src="/SeguridadVinculacion/images/grupos.jpg" className="rounded-lg shadow-lg lg:hidden" alt="grupos" />
                 <h3 className="mt-4 text-2xl">Grupos</h3>
               </div>
               <div className="text-center flex flex-col items-center">
                 <div className="overflow-hidden">
                   <Animate.MoveIn>
                     <div className="lg:flex flex-col justify-center items-center hidden">
-                      <Image width={230} height={230} src="/SeguridadESPE/images/lugares.jpg" className="rounded-lg shadow-lg" alt="lugares" />
+                      <Image width={230} height={230} src="/SeguridadVinculacion/images/lugares.jpg" className="rounded-lg shadow-lg" alt="lugares" />
                     </div>
                   </Animate.MoveIn>
                 </div>
-                <Image width={230} height={230} src="/SeguridadESPE/images/lugares.jpg" className="rounded-lg shadow-lg lg:hidden" alt="lugares" />
+                <Image width={230} height={230} src="/SeguridadVinculacion/images/lugares.jpg" className="rounded-lg shadow-lg lg:hidden" alt="lugares" />
                 <h3 className="mt-4 text-2xl">Lugares</h3>
               </div>
             </div>
@@ -442,12 +442,12 @@ const HomePage = () => {
             <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-x-10 gap-x-0">
               <div className="w-full flex justify-center items-center lg:w-1/3">
                 <Animate.FadeIn>
-                  <Image width={500} height={500} src="/SeguridadESPE/images/menusession2.webp" alt="profesores" />
+                  <Image width={500} height={500} src="/SeguridadVinculacion/images/menusession2.webp" alt="profesores" />
 
                 </Animate.FadeIn>
               </div>
               <div className="w-full lg:w-2/3 text-justify relative flex justify-center items-center overflow-hidden">
-                <Image className="img_no_user_select absolute opacity-10" width={500} height={500} src="/SeguridadESPE/images/espe.png" alt="profesor" />
+                <Image className="img_no_user_select absolute opacity-10" width={500} height={500} src="/SeguridadVinculacion/images/espe.png" alt="profesor" />
                 <br />
                 <Animate.FadeIn>
                   <div>

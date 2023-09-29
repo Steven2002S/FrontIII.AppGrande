@@ -129,6 +129,8 @@ const ReportsPage = () => {
   });
   const [selectedCiudad, setSelectedCiudad] = useState("");
   const [ciudades, setCiudades] = useState([]);
+  const [selectedUnidadEducativa, setSelectedUnidadEducativa] = useState("");
+  const [unidadesEducativas, setUnidadEducativa] = useState([]);
   const [selectedBarrio, setSelectedBarrio] = useState("");
   const [barrios, setBarrios] = useState([]);
   const [selectedEmergencia, setSelectedEmergencia] = useState("");
@@ -228,8 +230,10 @@ const ReportsPage = () => {
   |             FUNCIONES                                     |
   |                                                           |
   ------------------------------------------------------------|*/
+  //TODO: obtener datos de unidades eduvativas
   const datosIniciales = async () => {
     await obtenerciudades();
+    await obtenerUnidadesEducativas();
     await obtenerBarrios(selectedCiudad);
     await obtenerEmergencias(selectedCiudad, selectedBarrio);
     await obtenerAnios(selectedCiudad, selectedBarrio, selectedEmergencia);
@@ -241,8 +245,10 @@ const ReportsPage = () => {
   /* ciudad */
   const obtenerciudades = () => {
     axios
-      .get("http://192.188.58.82:3000/api/reportes/obtenerCiudades") //api obtener ciudades
+      .get("http://192.188.58.82:3000/api/v2/reportes/obtenerCiudades") //api obtener ciudades
       .then((response) => {
+        console.log("obtenerUnidadesEducativas");
+        
         setCiudades(response.data.data);
         if (primeraVez) {
           setSelectedCiudad(response.data.data[0]);
@@ -252,6 +258,22 @@ const ReportsPage = () => {
         console.error(error);
       });
   };
+
+  /* Unidad Educativa */
+  const obtenerUnidadesEducativas = () => {
+    axios
+      .get("http://192.188.58.82:3000/api/v2/reportes/obtenerUnidadesEducativas") //api obtener ciudades
+      .then((response) => {
+        setUnidadEducativa(response.data.data);
+        console.log(response.data.data);
+      }
+      )
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+        
 
   const cambiarCiudad = async (event: {
     target: { value: React.SetStateAction<string> };
@@ -264,6 +286,20 @@ const ReportsPage = () => {
     await setSelectedBarrio("");
     await setSelectedEmergencia("");
   };
+
+
+  // const obtenerUnidadesEducativas = (ciudad: any) => {
+  //   axios
+  //     .post("http://192.188.58.82:3000/api/v2/reporte/obtenerUnidadesEducativas", { ciudad }) //api obtener ciudades
+  //     .then((response) => {
+  //       setUnidadEducativa(response.data.data);
+  //       console.log(response.data.data);
+  //     }
+  //     )
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
   /* Barrio */
   const cambiarBarrio = async (event: {
     target: { value: React.SetStateAction<string> };
@@ -274,9 +310,18 @@ const ReportsPage = () => {
     await generearGraficos();
   };
 
+  const cambiarUnidadEducativa = async (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    await setSelectedUnidadEducativa(event.target.value);
+    await obtenerEmergencias(selectedCiudad, selectedBarrio);
+    await obtenerAnios(selectedCiudad, selectedBarrio, selectedAnio);
+    await generearGraficos();
+  };
+
   const obtenerBarrios = (ciudad: any) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerBarrios", { ciudad }) //api obtener barrios de la provincia
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerBarrios", { ciudad }) //api obtener barrios de la provincia
       .then((response) => {
         setBarrios(response.data.data);
       })
@@ -294,7 +339,7 @@ const ReportsPage = () => {
   };
   const obtenerEmergencias = (ciudad: any, barrio: any) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerEmergencias", {
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerEmergencias", {
         ciudad,
         barrio,
       })
@@ -315,7 +360,7 @@ const ReportsPage = () => {
 
   const obtenerAnios = (ciudad: any, barrio: any, titulo: any) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerAnios", {
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerAnios", {
         ciudad,
         barrio,
         titulo,
@@ -349,8 +394,9 @@ const ReportsPage = () => {
     await generearGraficos();
   };
 
-  /* Graficas */
+  /* TODO: Graficas */
   const generearGraficos = async () => {
+
     await obtenerMapaCalor(
       selectedCiudad,
       selectedBarrio,
@@ -358,8 +404,10 @@ const ReportsPage = () => {
       selectedDateRange.startDate,
       selectedDateRange.endDate,
       selectedHoraInicio.$d,
-      selectedHoraFin.$d
+      selectedHoraFin.$d,
+      selectedUnidadEducativa
     );
+
     await obtenerReporteBarras(
       selectedCiudad,
       selectedBarrio,
@@ -367,8 +415,10 @@ const ReportsPage = () => {
       selectedDateRange.startDate,
       selectedDateRange.endDate,
       selectedHoraInicio.$d,
-      selectedHoraFin.$d
+      selectedHoraFin.$d,
+      selectedUnidadEducativa
     );
+
     await obtenerReportPastel(
       selectedCiudad,
       selectedBarrio,
@@ -376,8 +426,10 @@ const ReportsPage = () => {
       selectedDateRange.startDate,
       selectedDateRange.endDate,
       selectedHoraInicio.$d,
-      selectedHoraFin.$d
+      selectedHoraFin.$d,
+      selectedUnidadEducativa
     );
+
     await obtenerCoordenadas(
       selectedCiudad,
       selectedBarrio,
@@ -385,7 +437,8 @@ const ReportsPage = () => {
       selectedDateRange.startDate,
       selectedDateRange.endDate,
       selectedHoraInicio.$d,
-      selectedHoraFin.$d
+      selectedHoraFin.$d,
+      selectedUnidadEducativa
     );
   };
 
@@ -396,10 +449,11 @@ const ReportsPage = () => {
     fechaInicio: any,
     fechaFin: any,
     horaInicio: any,
-    horaFin: any
+    horaFin: any,
+    unidadEducativa: any
   ) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerReporteBarras", {
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerReporteBarras", {
         ciudad,
         barrio,
         titulo,
@@ -407,6 +461,7 @@ const ReportsPage = () => {
         fechaFin,
         horaInicio,
         horaFin,
+        unidadEducativa,
       })
       .then((response) => {
         setDataBarrasNumber(response.data.data);
@@ -462,10 +517,11 @@ const ReportsPage = () => {
     fechaInicio: any,
     fechaFin: any,
     horaInicio: any,
-    horaFin: any
+    horaFin: any,
+    unidadEducativa: any
   ) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerReportePastel", {
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerReportePastel", {
         ciudad,
         barrio,
         titulo,
@@ -473,6 +529,7 @@ const ReportsPage = () => {
         fechaFin,
         horaInicio,
         horaFin,
+        unidadEducativa,
       })
       .then((response) => {
         /* setDataBarrasNumber(response.data.data); */
@@ -792,10 +849,11 @@ const ReportsPage = () => {
     fechaInicio: any,
     fechaFin: any,
     horaInicio: any,
-    horaFin: any
+    horaFin: any,
+    unidadEducativa: any
   ) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerMapaCalor", {
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerMapaCalor", {
         ciudad,
         barrio,
         titulo,
@@ -803,6 +861,7 @@ const ReportsPage = () => {
         fechaFin,
         horaInicio,
         horaFin,
+        unidadEducativa,
       })
       .then((response) => {
         const tooltip: any = response.data.data.tooltip;
@@ -910,7 +969,7 @@ const ReportsPage = () => {
   };
   const obtenerDatosCards = () => {
     axios
-      .get("http://192.188.58.82:3000/api/reportes/obtenerDatosCards")
+      .get("http://192.188.58.82:3000/api/v2/reportes/obtenerDatosCards")
       .then((response) => {
         setPublicacionesRegistradas(
           response.data.data.publicacionesRegistradas
@@ -931,10 +990,11 @@ const ReportsPage = () => {
     fechaInicio: any,
     fechaFin: any,
     horaInicio: any,
-    horaFin: any
+    horaFin: any,
+    unidadEducativa: any
   ) => {
     axios
-      .post("http://192.188.58.82:3000/api/reportes/obtenerCoordenadas", {
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerCoordenadas", {
         ciudad,
         barrio,
         titulo,
@@ -942,6 +1002,7 @@ const ReportsPage = () => {
         fechaFin,
         horaInicio,
         horaFin,
+        unidadEducativa,
       })
       .then((response) => {
         setCoordenadas(response.data.data);
@@ -954,7 +1015,7 @@ const ReportsPage = () => {
   const descargarExcel = () => {
     axios
       .post(
-        "http://192.188.58.82:3000/api/reportes/descargarXLSX",
+        "http://192.188.58.82:3000/api/v2/reportes/descargarXLSX",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -963,6 +1024,7 @@ const ReportsPage = () => {
           fechaFin: selectedDateRange.endDate,
           horaInicio: selectedHoraInicio.$d,
           horaFin: selectedHoraFin.$d,
+          unidadEducativa: selectedUnidadEducativa,
         },
         {
           responseType: "blob", // Indicar que la respuesta es de tipo blob (binario)
@@ -994,7 +1056,7 @@ const ReportsPage = () => {
 
     axios
       .post(
-        "http://192.188.58.82:3000/api/reportes/descargarPDF",
+        "http://192.188.58.82:3000/api/v2/reportes/descargarPDF",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -1003,6 +1065,7 @@ const ReportsPage = () => {
           fechaFin: selectedDateRange.endDate,
           horaInicio: selectedHoraInicio.$d,
           horaFin: selectedHoraFin.$d,
+          unidadEducativa: selectedUnidadEducativa,
         },
         {
           responseType: "blob", // Indicar que la respuesta es de tipo blob (binario)
@@ -1014,7 +1077,7 @@ const ReportsPage = () => {
         console.log(response.data);
 
         axios
-          .get("http://192.188.58.82:3000/api/documents", {
+          .get("http://192.188.58.82:3000/api/v2/documents", {
             responseType: "arraybuffer",
           })
           .then((res) => {
@@ -1044,7 +1107,7 @@ const ReportsPage = () => {
   const verPDF = () => {
     axios
       .post(
-        "http://192.188.58.82:3000/api/reportes/descargarPDF",
+        "http://192.188.58.82:3000/api/v2/reportes/descargarPDF",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -1053,6 +1116,7 @@ const ReportsPage = () => {
           fechaFin: selectedDateRange.endDate,
           horaInicio: selectedHoraInicio.$d,
           horaFin: selectedHoraFin.$d,
+          unidadEducativa: selectedUnidadEducativa,
         },
         {
           responseType: "arraybuffer", // Indicar que la respuesta es un ArrayBuffer
@@ -1076,7 +1140,7 @@ const ReportsPage = () => {
   const descargarCSV = () => {
     axios
       .post(
-        "http://192.188.58.82:3000/api/reportes/descargarCSV",
+        "http://192.188.58.82:3000/api/v2/reportes/descargarCSV",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -1085,6 +1149,7 @@ const ReportsPage = () => {
           fechaFin: selectedDateRange.endDate,
           horaInicio: selectedHoraInicio.$d,
           horaFin: selectedHoraFin.$d,
+          unidadEducativa: selectedUnidadEducativa,
         },
         {
           responseType: "blob", // Indicar que la respuesta es de tipo blob (binario)
@@ -1309,7 +1374,7 @@ const ReportsPage = () => {
                   <h1 className="text-blue-800 text-lg font-semibold mb-2">
                     Filtros
                   </h1>
-                  <div className="w-full flex flex-col lg:flex-row gap-3 mb-2">
+                  <div className="w-full flex flex-col-2 lg:flex-row gap-3 mb-2">
                     <div className="w-full">
                       <label
                         htmlFor="country"
@@ -1332,6 +1397,30 @@ const ReportsPage = () => {
                         ))}
                       </select>
                     </div>
+                    {/* TODO: Unidades educaticas */}
+                    <div className="w-full">
+                      <label
+                        htmlFor="country"
+                        className="block text-sm font-medium leading-6 text-gray-900"
+                      >
+                        Unidades educativas
+                      </label>
+                      <select
+                        id="country"
+                        name="country"
+                        autoComplete="country-name"
+                        value={selectedUnidadEducativa}
+                        onChange={cambiarUnidadEducativa}
+                        className="w-full py-2 rounded-md border-0 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600  sm:text-sm sm:leading-6"
+                      >
+                        {unidadesEducativas.map((unidad: any) => (
+                          <option key={unidad} value={unidad}>
+                            {unidad}
+                          </option>
+                        ))}
+                      </select>
+                      </div>
+
                   </div>
                   <div className="w-full flex flex-col lg:flex-row gap-3 mb-2">
                     <div className="w-full lg:w-1/2">

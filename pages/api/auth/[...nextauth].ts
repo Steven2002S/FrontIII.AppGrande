@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import axios from "axios";
+import { useRouter } from "next/router";
 declare module "next-auth" {
   interface Session {
     accessToken?: string;
@@ -9,7 +10,6 @@ declare module "next-auth" {
 
 export default NextAuth({
   // Configure one or more authentication providers
-
   providers: [
     // ...add more providers here
 
@@ -31,14 +31,14 @@ export default NextAuth({
         console.log("credentials");
         console.log({ credentials });
         // // return { name: 'Juan', correo: 'juan@google.com', role: 'admin' };
-        const pathUrl = "http://localhost:3001/api/login"; // Agrega el protocolo "http://" si es necesario
+        const pathUrl = "http://192.188.58.82:3000/api/v2/login"; // Agrega el protocolo "http://" si es necesario
         console.log("pathUrl");
         console.log({ pathUrl });
         console.log( {email: credentials.email, password: credentials.password});
         const result = await axios.post(pathUrl, {email: credentials.email, password: credentials.password});
         console.log("result");
         console.log({ result });
-        if (result.data.ok) {
+        if (result.data.ok && result.data.usuario.role === "ADMIN_ROLE") {
           console.log("result.data.ok");
           console.log({ result });
           return result.data.usuario;
@@ -58,11 +58,14 @@ export default NextAuth({
   // Custom Pages
   pages: {
     signIn: "/auth/login",
+    // signOut: "/auth/logout",
+    // error: "/auth/error", // Error code passed in query string as ?error=
+    
   },
 
   //   // Callbacks
   jwt: {
-    secret: process.env.JWT_SECRET_SEED, // deprecated
+    secret: "aduinaiuanduiawnduiand"
   },
 
   session: {
