@@ -10,12 +10,12 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-center lg:justify-end lg:flex-row gap-6 lg:gap-0 mt-2 mb-3">
             {/* <div className='flex gap-6'>             
               <Link href="https://espe.edu.ec" className="flex items-center sm:mb-0">
-                <Image width={250} height={10} src="/SeguridadVinculacion/images/ESPEtransp.png" className="mr-3" alt="ESPE Logo"/>
+                <Image width={250} height={10} src="/seguridadVinculaciontwo/images/ESPEtransp.png" className="mr-3" alt="ESPE Logo"/>
               </Link>
             </div> */}
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 dark:text-gray-400">
               {/* <Link href="/" className="flex items-center mb-4 sm:mb-0">
-                <Image width={50} height={50} src="/SeguridadVinculacion/images/SE SURVEY.svg" className="mr-5 rounded-full" alt="ESPE Logo" />
+                <Image width={50} height={50} src="/seguridadVinculaciontwo/images/SE SURVEY.svg" className="mr-5 rounded-full" alt="ESPE Logo" />
               </Link> */}
               <li>
                 <Link href="/filosofia" className="mr-4 hover:underline md:mr-6 text-white">Filosofía</Link>
@@ -36,7 +36,7 @@ const Footer = () => {
           <div className='flex justify-between gap-x-5 my-2'>
             <div >
               <Image
-                src="/SeguridadVinculacion/images/ESPEtransp.png"
+                src="/seguridadVinculaciontwo/images/ESPEtransp.png"
                 width={200}
                 height={40}
                 alt="logo"
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="flex flex-col items-center lg:items-start">
             <br/>
             <Image
-                src="/SeguridadVinculacion/images/SEblanco.svg"
+                src="/seguridadVinculaciontwo/images/SEblanco.svg"
                 width={150}
                 height={30}
                 alt="logo"

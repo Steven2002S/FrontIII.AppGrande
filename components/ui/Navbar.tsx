@@ -45,9 +45,9 @@ const Navbar = () => {
           <div className="hidden lg:flex">
             <Link href={"/"} className="-m-1.5 p-1.5">
               <span className="flex text-white justify-center items-center">
-                {/* <img className="h-8 w-auto mx-1" src="/SeguridadVinculacion/images/logo_blanco.png" alt="" /> */}
+                {/* <img className="h-8 w-auto mx-1" src="/seguridadVinculaciontwo/images/logo_blanco.png" alt="" /> */}
                 <Image
-                  src="/SeguridadVinculacion/images/SEcolores.svg"
+                  src="/seguridadVinculaciontwo/images/SEcolores.svg"
                   width={200}
                   height={35}
                   alt="logo"
@@ -159,7 +159,7 @@ const Navbar = () => {
                 <span className="sr-only">Seguridad ESPE</span>
                 <img
                   className="h-8 w-auto"
-                  src="/SeguridadVinculacion/images/logo_preview_rev_1.png"
+                  src="/seguridadVinculaciontwo/images/logo_preview_rev_1.png"
                   alt=""
                 />
               </Link>

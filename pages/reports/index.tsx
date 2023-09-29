@@ -1423,7 +1423,7 @@ const ReportsPage = () => {
 
                   </div>
                   <div className="w-full flex flex-col lg:flex-row gap-3 mb-2">
-                    <div className="w-full lg:w-1/2">
+                    {/* <div className="w-full lg:w-1/2">
                       <label
                         htmlFor="country"
                         className="block text-sm font-medium leading-6 text-gray-900"
@@ -1446,8 +1446,8 @@ const ReportsPage = () => {
                           </option>
                         ))}
                       </select>
-                    </div>
-                    <div className="w-full lg:w-1/2">
+                    </div> */}
+                    <div className="w-full lg:w-full">
                       <label
                         htmlFor="country"
                         className="block text-sm font-medium leading-6 text-gray-900"
