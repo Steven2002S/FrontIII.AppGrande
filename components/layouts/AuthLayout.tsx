@@ -13,9 +13,7 @@ export const AuthLayout: FC<Props> = ({ children, title }) => {
       <main>
         <div className="h-screen flex flex-col justify-center bg-gray-50 py-12 sm:px-6 lg:px-8 items-center">
           <div className="flex items-center justify-center my-9">
-            <h2 className="ml-2 text-3xl font-extrabold text-neutral-600">
-              {title}
-            </h2>
+    
           </div>
           <section className="overflow-hidden border-2 border-gray-300 rounded-xl ">
             <div className="flex min- overflow-hidden">

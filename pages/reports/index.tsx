@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, use } from "react";
+import React, { useState, useEffect, useContext, use, useReducer } from "react";
 import dynamic from "next/dynamic";
 import { saveAs } from "file-saver";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
@@ -41,8 +41,16 @@ import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import { ApexOptions } from "apexcharts";
 import { DateRangePicker } from "react-date-range";
-import { AuthContext } from "@/context/auth";
+import { AuthContext, AuthState, authReducer } from "@/context/auth";
 import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+
+const AUTH_INITIAL_STATE: AuthState = {
+  isLoggedIn: false,
+  user: undefined,
+};
+
+const baseUrl = "http://192.188.58.82:3000/api/v2";
 
 const defaultPosition = {
   lat: 35.7407872,
@@ -63,7 +71,36 @@ const fechaActual = new Date();
 
 // Restar un mes a la fecha actual
 fechaActual.setMonth(fechaActual.getMonth() - 1);
+
 const ReportsPage = () => {
+  const { isLoggedIn } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true); // Inicialmente, establezca loading en true
+  const router = useRouter();
+  const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE);
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
+  const checkToken = async () => {
+    try {
+      const { data } = await axios.get(`${baseUrl}/login/renew`, {
+        headers: {
+          "x-token": Cookies.get("token"),
+        },
+      });
+      const { token, usuario } = data;
+      console.log(token, usuario);
+      Cookies.set("token", token);
+      dispatch({ type: "[Auth] - Login", payload: usuario });
+      setLoading(false);
+      // router.replace("/reports.html").then(() => setLoading(false));
+    } catch (error) {
+      Cookies.remove("token");
+      router.replace("/auth/login.html").then(() => setLoading(false));
+    }
+  };
+
   const [selectedDateRange, setSelectedDateRange] = useState({
     startDate: fechaActual,
     endDate: new Date(),
@@ -210,8 +247,6 @@ const ReportsPage = () => {
       </div>
     );
   };
-  const { user, isLoggedIn } = useContext(AuthContext);
-  const router = useRouter();
 
   useEffect(() => {
     datosIniciales();
@@ -223,7 +258,6 @@ const ReportsPage = () => {
     selectedDateRange.endDate,
     selectedHoraInicio.$d,
     selectedHoraFin.$d,
-    user,
   ]);
   /*-----------------------------------------------------------
   |                                                           |
@@ -248,7 +282,7 @@ const ReportsPage = () => {
       .get("http://192.188.58.82:3000/api/v2/reportes/obtenerCiudades") //api obtener ciudades
       .then((response) => {
         console.log("obtenerUnidadesEducativas");
-        
+
         setCiudades(response.data.data);
         if (primeraVez) {
           setSelectedCiudad(response.data.data[0]);
@@ -262,18 +296,17 @@ const ReportsPage = () => {
   /* Unidad Educativa */
   const obtenerUnidadesEducativas = () => {
     axios
-      .get("http://192.188.58.82:3000/api/v2/reportes/obtenerUnidadesEducativas") //api obtener ciudades
+      .get(
+        "http://192.188.58.82:3000/api/v2/reportes/obtenerUnidadesEducativas"
+      ) //api obtener ciudades
       .then((response) => {
         setUnidadEducativa(response.data.data);
         console.log(response.data.data);
-      }
-      )
+      })
       .catch((error) => {
         console.error(error);
       });
   };
-
-        
 
   const cambiarCiudad = async (event: {
     target: { value: React.SetStateAction<string> };
@@ -286,7 +319,6 @@ const ReportsPage = () => {
     await setSelectedBarrio("");
     await setSelectedEmergencia("");
   };
-
 
   // const obtenerUnidadesEducativas = (ciudad: any) => {
   //   axios
@@ -321,7 +353,9 @@ const ReportsPage = () => {
 
   const obtenerBarrios = (ciudad: any) => {
     axios
-      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerBarrios", { ciudad }) //api obtener barrios de la provincia
+      .post("http://192.188.58.82:3000/api/v2/reportes/obtenerBarrios", {
+        ciudad,
+      }) //api obtener barrios de la provincia
       .then((response) => {
         setBarrios(response.data.data);
       })
@@ -396,7 +430,6 @@ const ReportsPage = () => {
 
   /* TODO: Graficas */
   const generearGraficos = async () => {
-
     await obtenerMapaCalor(
       selectedCiudad,
       selectedBarrio,
@@ -1196,6 +1229,14 @@ const ReportsPage = () => {
     "Last Month": "Mes pasado",
   };
 
+  if (loading) {
+    // Muestra el mensaje de carga mientras loading es true
+    return (
+      <div className="flex items-center justify-center h-screen">
+        Cargando...
+      </div>
+    );
+  }
   const inputRangesLabels = {
     "days up to today": "días hasta hoy",
     "days starting today": "días a partir de hoy",
@@ -1215,20 +1256,14 @@ const ReportsPage = () => {
     translateRange(inputRangesLabels)
   );
 
-
   return (
-
     <>
       <Layout title="Reportes">
         <div className="w-full h-full bg-gray-100 pt-16 lg:pt-28 lg:pb-12 px-4 mb-0">
-
-       
           <div className="text-center w-full px-4 py-4 bg-white rounded-lg shadow-lg mb-4">
             <h1 className="title text-3xl color-gray-light font-bold">
-            Analítica de Incidentes Unidades Educativas
+              Analítica de Incidentes Unidades Educativas
             </h1>
-    
-     
           </div>
           <div className="flex flex-col lg:flex-row w-full gap-2 lg:gap-6 mb-4">
             <div className="w-full xl:w-1/4 bg-color-primary rounded-lg px-4 shadow-lg flex items-center">
@@ -1419,8 +1454,7 @@ const ReportsPage = () => {
                           </option>
                         ))}
                       </select>
-                      </div>
-
+                    </div>
                   </div>
                   <div className="w-full flex flex-col lg:flex-row gap-3 mb-2">
                     {/* <div className="w-full lg:w-1/2">

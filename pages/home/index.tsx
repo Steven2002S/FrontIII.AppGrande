@@ -172,7 +172,7 @@ const HomePage = () => {
               </div>
               <div className="px-10 lg:px-32 flex justify-center mb-12">
                 <video controls className="w-full" style={{ maxWidth: "820px", height: "auto" }}>
-                  <source src="/seguridadVinculaciontwo/images/seguridadVinculaciontwo-03.mp4" type="video/mp4" />
+                  <source src="/seguridadVinculaciontwo/images/SeguridadESPE-03.mp4" type="video/mp4" />
                   Tu navegador no admite el elemento de video.
                 </video>
               </div>

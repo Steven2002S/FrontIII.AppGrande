@@ -7,7 +7,6 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { AuthContext } from "./AuthContext";
 import { useRouter } from "next/router";
-import { signOut, useSession } from "next-auth/react";
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -27,35 +26,37 @@ const baseUrl = "http://192.188.58.82:3000/api/v2";
 
 export const AuthProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE);
-  const { data, status } = useSession();
-
-  useEffect(() => {
-    if (status === "authenticated") {
-      console.log({ user: data?.user });
-      dispatch({ type: "[Auth] - Login", payload: data?.user as IUser });
-    }
-    // console.log("No hay sesion");
-  }, [status, data]);
+  // const { data, status } = useSession();
+  const router = useRouter();
 
   // useEffect(() => {
-  //   checkToken();
-  // }, []);
-
-  // const checkToken = async () => {
-  //   try {
-  //     const { data } = await axios.get(`${baseUrl}/login/renew`, {
-  //       headers: {
-  //         "x-token": Cookies.get("token"),
-  //       },
-  //     });
-  //     const { token, usuario } = data;
-  //     console.log(token, usuario);
-  //     Cookies.set("token", token);
-  //     dispatch({ type: "[Auth] - Login", payload: usuario });
-  //   } catch (error) {
-  //     Cookies.remove("token");
+  //   if (status === "authenticated") {
+  //     console.log({ user: data?.user });
+  //     dispatch({ type: "[Auth] - Login", payload: data?.user as IUser });
   //   }
-  // };
+  //   // console.log("No hay sesion");
+  // }, [status, data]);
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
+  const checkToken = async () => {
+    try {
+      const { data } = await axios.get(`${baseUrl}/login/renew`, {
+        headers: {
+          "x-token": Cookies.get("token"),
+        },
+      });
+      const { token, usuario } = data;
+      console.log(token, usuario);
+      Cookies.set("token", token);
+      dispatch({ type: "[Auth] - Login", payload: usuario });
+    } catch (error) {
+      Cookies.remove("token");
+      // router.replace("/auth/login");
+    }
+  };
 
   const loginUser = async (
     email: string,
@@ -119,9 +120,10 @@ export const AuthProvider = ({ children }: Props) => {
     Cookies.remove('country');
     Cookies.remove('phone');
     
-    signOut();
-    // router.reload();
-    // Cookies.remove('token');
+    // signOut();
+    router.reload();
+    Cookies.remove('token');
+
 }
 
   return (
