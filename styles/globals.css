@@ -60,6 +60,11 @@ a.text-sm.leading-6.text-color-primario {
 .bg-color-lila {
     background-color: #6166fa1f;
 }
+
+.bg-color-espe{
+    background-color: #016E40;
+}
+
 .bg-color-celeste {
     background-color: #e0e6ff;
 }

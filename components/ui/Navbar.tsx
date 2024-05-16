@@ -47,11 +47,11 @@ const Navbar = () => {
               <span className="flex text-white justify-center items-center">
                 {/* <img className="h-8 w-auto mx-1" src="/seguridadVinculaciontwo/images/logo_blanco.png" alt="" /> */}
                 <Image
-                  src="/seguridadVinculaciontwo/images/SEcolores.svg"
+                  src="https://res.cloudinary.com/dfitq38dk/image/upload/v1715819232/Img_CommunitySafe/Logo_CommunitySafe_dkkwx9.png"
                   width={200}
                   height={35}
                   alt="logo"
-                  className="mr-3 rounded-full"
+                  className="mr-3 rounded-full pl-4"
                 />
               </span>
             </Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
             </button>
           </div>
           <Popover.Group className="hidden lg:flex lg:gap-x-12">
-            <Link href={"/"} className="text-sm leading-6 text-color-primario">
+            <Link href={"/"} className="text-sm ">
               Inicio
             </Link>
             <Popover
@@ -77,7 +77,7 @@ const Navbar = () => {
             >
               <Popover.Button
                 onClick={() => setOpen(!open)}
-                className="flex items-center text-sm leading-6"
+                className="flex items-center text-sm "
               >
                 Quiénes somos
                 <ChevronDownIcon
@@ -103,14 +103,14 @@ const Navbar = () => {
                       >
                         <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                           <item.icon
-                            className="h-6 w-6 text-gray-600 group-hover:text-color-secondary"
+                            className="h-6 w-6 text-gray-600 group-hover:text-green-600"
                             aria-hidden="true"
                           />
                         </div>
                         <div className="flex-auto">
                           <Link
                             href={item.href}
-                            className="block text-gray-900 group-hover:text-color-secondary"
+                            className="block text-gray-900 group-hover:text-green-600"
                           >
                             {item.name}
                             <span className="absolute inset-0" />
@@ -124,24 +124,19 @@ const Navbar = () => {
             </Popover>
 
             {isLoggedIn && currentPath === "/reports" ? (
-              <span 
+              <span
                 onClick={() => logoutUser()}
-              className="text-sm leading-6 text-red-500 cursor-pointer">
+                className="text-sm text-red-500 cursor-pointer"
+              >
                 Cerrar Sesión
               </span>
             ) : (
-              <Link
-                href={"/reports.html"}
-                className="text-sm leading-6 text-color-primario"
-              >
+              <Link href={"/reports.html"} className="text-sm ">
                 Reportes
               </Link>
             )}
 
-            <Link
-              href={"/contact.html"}
-              className="text-sm leading-6 text-color-primario"
-            >
+            <Link href={"/contact.html"} className="text-sm ">
               Contacto
             </Link>
           </Popover.Group>
