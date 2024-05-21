@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col items-center lg:items-start">
               <Image
-                src="https://res.cloudinary.com/dfitq38dk/image/upload/v1698102910/EspoLogo_Blanco.png"
+                src="https://res.cloudinary.com/dfitq38dk/image/upload/c_crop,w_585,h_240/v1716254265/Img_CommunitySafe/Logo_Blanco_erngvs.png"
                 width={200}
                 height={40}
                 alt="logo"

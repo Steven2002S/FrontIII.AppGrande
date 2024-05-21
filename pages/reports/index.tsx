@@ -50,6 +50,11 @@ const AUTH_INITIAL_STATE: AuthState = {
   user: undefined,
 };
 
+interface DataUer {
+  role: string;
+  parroquia: string;
+}
+
 const baseUrl = "http://192.188.58.82:3000/api";
 
 const defaultPosition = {
@@ -77,6 +82,11 @@ const ReportsPage = () => {
   const [loading, setLoading] = useState(true); // Inicialmente, establezca loading en true
   const router = useRouter();
   const [state, dispatch] = useReducer(authReducer, AUTH_INITIAL_STATE);
+  const [dataUser, setDataUser] = useState({
+    role: "dg",
+    parroquia: "",
+    nombre: "",
+  });
 
   useEffect(() => {
     checkToken();
@@ -89,9 +99,21 @@ const ReportsPage = () => {
           "x-token": Cookies.get("token"),
         },
       });
+
       const { token, usuario } = data;
       console.log(token, usuario);
+
+      const newDataUser = {
+        role: usuario.role,
+        // unidadEducativa: usuario.unidadEducativa,
+        nombre: usuario.nombre,
+      };
+
+
       Cookies.set("token", token);
+      // Actualizar dataUser.role con el nuevo rol de usuario.role
+      //setDataUser(newDataUser);
+      
       dispatch({ type: "[Auth] - Login", payload: usuario });
       setLoading(false);
       // router.replace("/reports.html").then(() => setLoading(false));
@@ -1434,13 +1456,13 @@ const ReportsPage = () => {
                     </div>
                     {/* TODO: Unidades educaticas */}
                     {/* <div className="w-full"> */}
-                      {/* <label
+                    {/* <label
                         htmlFor="country"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
                         Unidades educativas
                       </label> */}
-                      {/* <select
+                    {/* <select
                         id="country"
                         name="country"
                         autoComplete="country-name"
