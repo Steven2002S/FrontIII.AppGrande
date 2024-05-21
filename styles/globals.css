@@ -51,14 +51,14 @@
     transition: all 0.2s ease;
 }
 .user-pic.active-pic {
-    border: 2px solid #ff7d3b;
+    border: 2px solid #3bff4b;
 }
 
 a.text-sm.leading-6.text-color-primario {
     font-size: 0.99rem;
 }
 .bg-color-lila {
-    background-color: #6166fa1f;
+    background-color: #ccf8bf71;
 }
 
 .bg-color-espe{
@@ -75,7 +75,7 @@ a.text-sm.leading-6.text-color-primario {
     background-color: #103970;
 }
 .bg-color-secundario {
-    background-color: #757afb;
+    background-color: #34AA55;
 }
 
 .bg-color-terciario {
@@ -112,71 +112,58 @@ a.text-sm.leading-6.text-color-primario {
     width: 100%;
     height: 100%;
 }
-.bubbles-box .inner .bubble-1 {
+.bubbles-box .inner img {
     position: absolute;
+    animation: side 2s ease-in-out infinite alternate;
+}
+.bubbles-box .inner .bubble-1 {
     width: 100px;
     height: 100px;
     top: 15%;
     left: 8%;
-    z-index: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
-    animation: side 2s ease-in-out infinite alternate;
 }
 .bubbles-box .inner .bubble-2 {
-    position: absolute;
     width: 150px;
     height: 150px;
     top: 18%;
     right: 14%;
-    z-index: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
     animation: otherside 2s ease-in-out infinite alternate;
 }
 .bubbles-box .inner .bubble-3 {
-    position: absolute;
     width: 150px;
     height: 150px;
     top: 60%;
     right: 40%;
-    z-index: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
     animation: otherside 2s ease-in-out infinite alternate;
 }
 .bubbles-box .inner .bubble-sm-1 {
-    position: absolute;
     width: 50px;
     height: 50px;
     top: 30%;
     right: 50%;
-    z-index: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
-    animation: side 2s ease-in-out infinite alternate;
 }
 .bubbles-box .inner .bubble-sm-2 {
-    position: absolute;
     width: 50px;
     height: 50px;
     top: 40%;
     right: 40%;
-    z-index: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
-    animation: side 2s ease-in-out infinite alternate;
 }
 .bubbles-box .inner .bubble-sm-3 {
-    position: absolute;
     width: 50px;
     height: 50px;
     top: 85%;
     right: 20%;
-    z-index: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
     animation: otherside 2s ease-in-out infinite alternate;
+}
+
+@keyframes side {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
+}
+
+@keyframes otherside {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-20px); }
 }
 .flip-card {
     /* background-color: transparent; */

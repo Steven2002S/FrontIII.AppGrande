@@ -126,12 +126,12 @@ const HomePage = () => {
           <Animate.FadeIn>
             <div className="bubbles-box fade-in">
               <div className="inner">
-                <div className="bubble-1"></div>
-                <div className="bubble-sm-1"></div>
-                <div className="bubble-2"></div>
-                <div className="bubble-sm-2"></div>
-                <div className="bubble-3"></div>
-                <div className="bubble-sm-3"></div>
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 1" className="bubble-1" />
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 2" className="bubble-sm-1" />
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 3" className="bubble-2" />
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 4" className="bubble-sm-2" />
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 5" className="bubble-3" />
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 6" className="bubble-sm-3" />
               </div>
             </div>
           </Animate.FadeIn>
@@ -141,21 +141,20 @@ const HomePage = () => {
                 <div className="w-full lg:w-1/2 px-5 h-full">
                   <Animate.FadeUp>
                     <div className="bg-gray-100 rounded-lg p-8 w-full md:text-left md:pr-10 shadow-lg fade-in">
-                      <h1 className="title mb-4 text-3xl  font-bold " >
+                      <h1 className="title mb-4 text-3xl font-bold">
                         Por una comunidad segura
                       </h1>
                       <p className="leading-relaxed mb-6" style={{ textAlign: "justify" }}>
                         Donde las personas se protegen mutuamente, se apoyan y se preocupan por el bienestar de todos.
-                        Únete a nuestra aplicación y forma parte de Seguridad ESPE. Juntos, construyamos una comunidad más segura.
+                        Únete a nuestra aplicación y forma parte de Community Safe. Juntos, construyamos una comunidad más segura.
                       </p>
-                 
                     </div>
                   </Animate.FadeUp>
                 </div>
                 <div className="w-full lg:w-1/2 h-full overflow-hidden">
                   <Animate.MoveIn>
                     <div className="flex h-full justify-center">
-                      <Image src="/seguridadVinculaciontwo/images/phone2.png" width={500} height={500} className="object-contain move-in" alt="logo" />
+                      <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716313387/Img_CommunitySafe/dobleCelular_hkr6ju.png" width={500} height={500} className="object-contain move-in" alt="logo" />
                     </div>
                   </Animate.MoveIn>
                 </div>
@@ -168,11 +167,11 @@ const HomePage = () => {
           <div className="flex flex-col w-full overflow-hidden">
             <Animate.FadeIn>
               <div className="text-center mb-12">
-                <h1 className="text-center title">Seguridad ESPE  <br /></h1> <h1 className="text-2xl">Tu solución para la protección ciudadana</h1>
+                <h1 className="text-center title">Community Safe  <br /></h1> <h1 className="text-2xl">Por comunidades seguras</h1>
               </div>
               <div className="px-10 lg:px-32 flex justify-center mb-12">
                 <video controls className="w-full" style={{ maxWidth: "820px", height: "auto" }}>
-                  <source src="/seguridadVinculaciontwo/images/SeguridadESPE-03.mp4" type="video/mp4" />
+                  <source src="/communitySafe/images/SeguridadESPE-03.mp4" type="video/mp4" />
                   Tu navegador no admite el elemento de video.
                 </video>
               </div>
@@ -187,27 +186,31 @@ const HomePage = () => {
             <Animate.MoveIn>
               <div className="w-full flex flex-col justify-center gap-y-10 lg:gap-y-0 items-center lg:flex-row">
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end overflow-hidden">
-                  <Image width={550} height={500} src="/seguridadVinculaciontwo/images/phone3.png" className="move-in" alt="phone3" />
+                  <Image width={550} height={500} src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716313392/Img_CommunitySafe/celularSolo_qktfp3.png" className="move-in" alt="phone3" />
                 </div>
                 <div className="w-full lg:w-1/2 h-full flex items-center lg:items-end pb-16 overflow-hidden">
                   <div className="text-start px-10 lg:px-0 h-full w-full move-in">
                     <h1 className="title mb-10 ">¿Cómo funciona?</h1>
                     <ul>
                       <li className="mb-8 flex items-center">
-                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-blue-800 font-bold text-2xl">1</span>
-                        <span className="text-2xl">Descarga la aplicación Seguridad ESPE</span>
+                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-black font-bold text-2xl">1</span>
+                        <span className="text-2xl">Descarga la aplicación Community Safe</span>
                       </li>
                       <li className="mb-8 flex items-center">
-                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-blue-800 font-bold text-2xl">2</span>
+                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-black font-bold text-2xl">2</span>
                         <span className="text-2xl">Realiza un reporte y publícalo</span>
                       </li>
                       <li className="mb-8 flex items-center">
-                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-blue-800 font-bold text-2xl">3</span>
+                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-black font-bold text-2xl">3</span>
                         <span className="text-2xl">Revisa el reporte publicado en noticias</span>
                       </li>
                       <li className="mb-8 flex items-center">
-                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-blue-800 font-bold text-2xl">4</span>
+                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-black font-bold text-2xl">4</span>
                         <span className="text-2xl">Crea grupos personalizados</span>
+                      </li>
+                      <li className="mb-8 flex items-center">
+                        <span className="bg-gray-100 px-5 py-3 rounded-full mr-3 text-black font-bold text-2xl">5</span>
+                        <span className="text-2xl">Genera alertas a tus contactos de Confianza</span>
                       </li>
                     </ul>
                   </div>
@@ -227,7 +230,7 @@ const HomePage = () => {
                 <div className="w-full flex flex-col gap-x-0 lg:flex-row lg:gap-x-10 gap-y-5">
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/seguridadVinculaciontwo/images/reporte.png" />
+                      <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716313915/Img_CommunitySafe/ReportesLogo_ih84e8.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -237,7 +240,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/seguridadVinculaciontwo/images/sos.png" />
+                      <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314117/Img_CommunitySafe/sos_gnfxvv.png" />
 
                     </div>
                     <div className="px-2">
@@ -248,7 +251,8 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/5">
                     <div className="mb-4 flex justify-center">
-                      <NewspaperIcon className="h-14 w-14 text-color-secundario" aria-hidden="true" />
+                      <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314160/Img_CommunitySafe/logo_noticias_fsevwu.png" />
+
                     </div>
                     <div className="px-2">
                       <span>
@@ -259,7 +263,8 @@ const HomePage = () => {
                   <div className="flex flex-col w-full lg:w-1/5">
                     <div className="mb-4 flex justify-center">
 
-                      <UserGroupIcon className="h-14 w-14 text-color-secundario" aria-hidden="true" />
+                    <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314275/Img_CommunitySafe/logo_grupos_kwikbx.png" />
+
                     </div>
                     <div className="px-2">
                       <span>
@@ -268,11 +273,11 @@ const HomePage = () => {
                     </div>
                   </div>
 
-  
+
                 </div>
               </div>
             </Animate.FadeIn>
-            <Animate.FadeIn>
+            {/* <Animate.FadeIn>
               <br />
               <div>
                 <h1 className="title mb-6 md:mb-6 lg:mb-8 ">
@@ -281,7 +286,7 @@ const HomePage = () => {
                 <div className="w-full flex flex-col gap-x-0 lg:flex-row lg:gap-x-10 gap-y-5">
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/seguridadVinculaciontwo/images/comunidad.png" />
+                      <img className="mb-1 " width="60" height="60" src="/communitySafe/images/comunidad.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -291,7 +296,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/seguridadVinculaciontwo/images/estadisticas.png" />
+                      <img className="mb-1 " width="55" height="55" src="/communitySafe/images/estadisticas.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -300,7 +305,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/seguridadVinculaciontwo/images/smsimpacto.png" />
+                      <img className="mb-1 " width="60" height="60" src="/communitySafe/images/smsimpacto.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -310,7 +315,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-col w-full lg:w-1/4">
                     <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/seguridadVinculaciontwo/images/alarma.png" />
+                      <img className="mb-1 " width="60" height="60" src="/communitySafe/images/alarma.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -320,44 +325,84 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-            </Animate.FadeIn>
+            </Animate.FadeIn> */}
           </div>
         </section>
 
-   
 
-        <section className="bg-white h-full w-full flex items-center">
-          <div className="container relative py-10 px-10 lg:px-32">
-            <Animate.FadeIn>
-              <h1 className="title mb-10 text-center">
-                ¿De dónde nace?
-              </h1>
-            </Animate.FadeIn>
-            <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-x-10 gap-x-0">
-              <div className="w-full flex justify-center items-center lg:w-1/3">
-                <Animate.FadeIn>
-                  <Image width={500} height={500} src="/seguridadVinculaciontwo/images/menusession2.webp" alt="profesores" />
 
-                </Animate.FadeIn>
-              </div>
-              <div className="w-full lg:w-2/3 text-justify relative flex justify-center items-center overflow-hidden">
-                <Image className="img_no_user_select absolute opacity-10" width={500} height={500} src="/seguridadVinculaciontwo/images/espe.png" alt="profesor" />
+        <section className="w-full">
+          <Animate.FadeIn>
+            <h1 className="title mb-5 text-center md:mb-10 ml-10">
+              ¿De dónde nace?
+            </h1>
+          </Animate.FadeIn>
+          <div className="flex flex-wrap mt-5 ml-2 mr-2 text-center md:ml-5 md:mr-5 text-justify">
+            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
+              {/* <p>
+                En la Universidad de las Fuerzas Armadas ESPE Sede Santo Domingo, un grupo de docentes y los tesistas Vinicio Borja y Maria José Párraga expresaron su preocupación por la seguridad de la comunidad de Luz de América. Después de llevar a cabo encuestas en dicha comunidad con el objetivo de identificar sus necesidades técnicas, tomaron la decisión de desarrollar una aplicación denominada "Seguridad ESPE". Esta aplicación tiene como finalidad permitir a los usuarios reportar incidentes de seguridad en tiempo real a través de una plataforma web y una aplicación móvil.</p>
+             */}
+              <p>
+                A inicios del mes de marzo del 2023, en la Universidad de las Fuerzas Armadas ESPE, Sede Santo Domingo de
+                los Tsáchilas, se da inicio a la Fase I del proyecto de vinculación  titulado "IMPLEMENTACIÓN DE
+                APLICACIONES WEB Y MÓVILES PARA LA GESTIÓN DE EMERGENCIAS COMUNITARIAS EN LA PROVINCIA DE SANTO DOMINGO DE
+                LOS TSÁCHILAS", donde un grupo de docentes en un trabajo colaborativo con estudiantes de la carrera de
+                Ingeniería en Tecnologías de la Información, se inició en la comunidad de la parroquia de Luz de América.
+                Para atender esta necesidad, se llevaron a cabo encuestas como parte de un muestreo con el fin de
+                identificar los incidentes más comunes. Estas encuestas revelaron diversas problemáticas de seguridad,
+                incluyendo robos, vandalismo, desorden público y emergencias médicas, entre otras.
                 <br />
-                <Animate.FadeIn>
-                  <div>
-                    <p className="mb-6">
-                      Seguridad ESPE, nace a partir del proyecto de vinculación con la sociedad denominado &ldquo;Implementación de aplicaciones web y móvil para gestionar emergencias comunitarias en la provincia de Santo Domingo de los Tsáchilas&ldquo;; con la finalidad de fortalecer la seguridad de la comunidad con la comunicación, coordinación y respuesta ante situaciones de emergencia. La aplicación aprovechará el alto uso de dispositivos móviles e Internet para hacer frente a los desafíos de seguridad, brindando una solución innovadora en el campo de la protección ciudadana.
-                    </p>
-                    <p className="mb-6">
-                      Utilizando como caso de estudio la parroquia Luz de América, se realizaron encuestas exhaustivas para determinar las emergencias comunitarias más comunes en la misma. Estas encuestas identificaron diversas problemáticas de seguridad, tales como robos, vandalismo, desorden público, emergencias médicas, entre otras. La información recopilada se utilizó para desarrollar funcionalidades y servicios específicos en la aplicación Seguridad ESPE, adaptándola a las necesidades de los residentes de la provincia.
-                    </p>
-                    <p>
-                      La aplicación web por otra parte, tiene como objetivo principal proporcionar reportes estadísticos detallados sobre diferentes tipos de emergencias comunitarias. Brinda las opciones de filtrar ubicación, tipo, hora de inicio, hora de fin, fecha de inicio y fin de la emergencia, se accede a datos específicos y relevantes para un análisis más preciso. Además, permite la generación y descarga de informes en formato PDF, a su vez es posible descargar la imagen de la gráfica en formatos PNG y SVG. En caso de necesitar más información, la base de datos se puede descargar en formato CSV (Comma Separated Values) o xlsx (Excel), simplificando así el análisis y el uso de la información para la toma de decisiones en la comunidad.
-                    </p>
-                  </div>
-                </Animate.FadeIn>
-              </div>
+                Con los datos recopilados en la Fase I, en el mes de mayo dos estudiantes de la carrera
+                desarrollaron el proyecto de Unidad de Integración Curricular denominado "Desarrollo de una aplicación
+                web y móvil para la gestión de alertas de emergencia comunitaria bajo el enfoque de metodologías ágiles",
+                la misma sirvió como punto de partida para el desarrollo de la aplicación "Seguridad ESPE". La
+                información recopilada se empleó para diseñar funciones y servicios específicos en la aplicación.
+
+              </p>
+
             </div>
+            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
+
+              {/* <p>
+                Con el tiempo, Seguridad ESPE se ha convertido en una herramienta esencial para mejorar la seguridad y fortalecer la comunidad. Basándose en las aplicaciones desarrolladas por los tesistas, se llevó a cabo la Fase II del proyecto de Vinculación con la Sociedad, denominado "IMPLEMENTACIÓN DE APLICACIONES WEB Y MÓVILES PARA LA GESTIÓN DE EMERGENCIAS COMUNITARIAS EN LA PROVINCIA DE SANTO DOMINGO DE LOS TSÁCHILAS". En esta ocasión, el enfoque se dirigió hacia las Unidades Educativas de las parroquias Puerto Limón y El Esfuerzo.</p>
+            */}
+
+              <p>
+                La principal meta de esta aplicación fue fortalecer la seguridad de la comunidad, fomentando la comunicación,
+                coordinación y respuesta ante situaciones de emergencia, y aprovechando el uso de dispositivos móviles e internet.
+                La aplicación ofrece una solución innovadora en el ámbito de la protección ciudadana.
+                <br />
+                Basándonos en las aplicaciones desarrolladas anteriormente, a inicios de septiembre del 2023 inició la Fase
+                II del Proyecto de Vinculación con la Sociedad, en esta fase, un grupo de diez estudiantes y tres docentes
+                de la UFA - ESPE Sede Santo Domingo de los Tsáchilas, recolectó datos mediante encuestas realizadas en
+                Unidades Educativas de la parroquia Puerto Limón y El Esfuerzo, estos datos se utilizaron como base para
+                desarrollar la aplicación <strong>"Schoolar Security”</strong>.
+                <br />
+                El propósito principal de esta aplicación es administrar y gestionar incidentes en las unidades
+                educativas, comenzando con las parroquias asignadas. Estas aplicaciones proveen información en tiempo real
+                sobre los incidentes, a las autoridades de dichas instituciones, además de generar estadísticas que
+                facilitan la toma de decisiones futuras para mejorar la calidad de vida, comunicación, seguridad de
+                todos los integrantes de la comunidad.
+
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
+              <img
+                src="https://res.cloudinary.com/dfitq38dk/image/upload/v1698103740/integrantesFase1.webp"
+                width={500}
+                height={500}
+                alt="Primera foto"
+                className="mx-auto rounded" ></img>
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
+              <img
+                src="https://res.cloudinary.com/dfitq38dk/image/upload/c_fill,h_1105/v1699587287/fotoFase_II.jpg"
+                width={500}
+                height={500}
+                alt="Segunda foto"
+                className="mx-auto rounded" ></img>
+            </div>
+
           </div>
         </section>
       </div >

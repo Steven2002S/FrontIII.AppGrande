@@ -1286,6 +1286,11 @@ const ReportsPage = () => {
             <h1 className="title text-3xl color-gray-light font-bold">
               Analítica de Incidentes Comunitarios
             </h1>
+            <div className="fade-in">
+              <h5 className="text-lg ml-2  color-gray-light font-semibold">
+                Bienvenido/a {dataUser.nombre}
+              </h5>
+            </div>
           </div>
           <div className="flex flex-col lg:flex-row w-full gap-2 lg:gap-6 mb-4">
             <div className="w-full xl:w-1/4 bg-color-primary rounded-lg px-4 shadow-lg flex items-center">

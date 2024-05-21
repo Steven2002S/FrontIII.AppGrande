@@ -63,7 +63,7 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                 </div>
               </div>
               <div className="w-full h-10"></div>
-              <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500">Tesistas</h3>
+              <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500">Fase I</h3>
               <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
                 <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/ddodvvqcq/image/upload/v1696447805/images/MariaParraga.jpg" />
