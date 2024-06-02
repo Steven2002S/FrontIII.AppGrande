@@ -58,11 +58,20 @@ a.text-sm.leading-6.text-color-primario {
     font-size: 0.99rem;
 }
 .bg-color-lila {
-    background-color: #ccf8bf71;
+    background-color: #fafafadd;
 }
 
+header {
+    background-color: var(--color-terciario); /* O el color que desees */
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(5, 96, 8, 0.479), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
 .bg-color-espe{
-    background-color: #016E40;
+    background-color: #1F5545;
 }
 
 .bg-color-celeste {
@@ -75,7 +84,7 @@ a.text-sm.leading-6.text-color-primario {
     background-color: #103970;
 }
 .bg-color-secundario {
-    background-color: #34AA55;
+    background-color: #1F5545;
 }
 
 .bg-color-terciario {
@@ -287,7 +296,7 @@ a.text-sm.leading-6.text-color-primario {
     display: block;
     font-size: 0.875rem;
     font-weight: 500;
-    color: #4f46e5;
+    color: #e59046;
     margin-bottom: 0.5rem;
   }
   
@@ -305,7 +314,7 @@ a.text-sm.leading-6.text-color-primario {
   }
   
   .button:hover {
-    background-color: #675fff;
+    background-color: #7c3c17;
   }
   
   .leaflet-container {

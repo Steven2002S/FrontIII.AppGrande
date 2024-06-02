@@ -12,7 +12,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  //basePath: "/communitySafe",
+ // basePath: "/communitySafe",
 };
 
 module.exports = withTM(nextConfig);

@@ -140,7 +140,7 @@ const HomePage = () => {
               <div className="flex flex-col-reverse lg:flex-row items-center">
                 <div className="w-full lg:w-1/2 px-5 h-full">
                   <Animate.FadeUp>
-                    <div className="bg-gray-100 rounded-lg p-8 w-full md:text-left md:pr-10 shadow-lg fade-in">
+                    <div className="bg-gray-200 rounded-lg p-8 w-full md:text-left md:pr-10 shadow-lg fade-in">
                       <h1 className="title mb-4 text-3xl font-bold">
                         Por una comunidad segura
                       </h1>
@@ -154,7 +154,7 @@ const HomePage = () => {
                 <div className="w-full lg:w-1/2 h-full overflow-hidden">
                   <Animate.MoveIn>
                     <div className="flex h-full justify-center">
-                      <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716313387/Img_CommunitySafe/dobleCelular_hkr6ju.png" width={500} height={500} className="object-contain move-in" alt="logo" />
+                      <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716391990/Img_CommunitySafe/Smartphone_Sale_Instagram_Story_qqzk47.png" width={500} height={500} className="object-contain move-in" alt="logo" />
                     </div>
                   </Animate.MoveIn>
                 </div>
@@ -171,7 +171,8 @@ const HomePage = () => {
               </div>
               <div className="px-10 lg:px-32 flex justify-center mb-12">
                 <video controls className="w-full" style={{ maxWidth: "820px", height: "auto" }}>
-                  <source src="/communitySafe/images/SeguridadESPE-03.mp4" type="video/mp4" />
+                  <source src="/communitySafe/images/COMMUNITY SAFE.mp4"
+                   type="video/mp4" />
                   Tu navegador no admite el elemento de video.
                 </video>
               </div>
