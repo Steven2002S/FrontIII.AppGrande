@@ -36,7 +36,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                 id: 2,
                 title: "Actividad 2: Registro y Configuración",
                 steps: [
-                  "Paso 1: Abrir el aplicativo.",
+                  "Paso 1: Abrir el aaaaaaaplicativo.",
                   "Paso 2: Completar el formulario de registro.",
                   "Paso 3: Configurar las preferencias iniciales."
                 ],
