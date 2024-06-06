@@ -28,16 +28,15 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const { isLoggedIn,logoutUser } = useContext(AuthContext);
+  const { isLoggedIn, logoutUser } = useContext(AuthContext);
 
   const router = useRouter();
   const currentPath = router.pathname;
   console.log(currentPath);
-  
 
   return (
     <>
-      <header className="header bg-color-terciario fixed top-0 z-10 w-full title">
+      <header className="header bg-color-espe fixed top-0 z-10 w-full title">
         <nav
           className="mx-auto flex max-w-7xl items-center lg:justify-between md:justify-between sm:justify-between px-6 py-4 lg:px-0 lg:relative"
           aria-label="Global"
@@ -45,13 +44,12 @@ const Navbar = () => {
           <div className="hidden lg:flex">
             <Link href={"/"} className="-m-1.5 p-1.5">
               <span className="flex text-white justify-center items-center">
-                {/* <img className="h-8 w-auto mx-1" src="/communitySafe/images/logo_blanco.png" alt="" /> */}
                 <Image
                   src="https://res.cloudinary.com/dfitq38dk/image/upload/v1715819232/Img_CommunitySafe/Logo_CommunitySafe_dkkwx9.png"
                   width={200}
                   height={35}
                   alt="logo"
-                  className="mr-3 rounded-full pl-4"
+                  className="mr-3 rounded-full pl-2"
                 />
               </span>
             </Link>
@@ -59,15 +57,15 @@ const Navbar = () => {
           <div className="flex lg:hidden mx-2">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6 text-black" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <Popover.Group className="hidden lg:flex lg:gap-x-12">
-            <Link href={"/"} className="text-sm ">
+            <Link href={"/"} className="text-sm text-white hover:text-gray-300">
               Inicio
             </Link>
             <Popover
@@ -77,11 +75,11 @@ const Navbar = () => {
             >
               <Popover.Button
                 onClick={() => setOpen(!open)}
-                className="flex items-center text-sm "
+                className="flex items-center text-sm text-white hover:text-gray-300"
               >
                 Quiénes somos
                 <ChevronDownIcon
-                  className="h-5 w-5 flex-none text-color-primario"
+                  className="h-5 w-5 flex-none text-white ml-1"
                   aria-hidden="true"
                 />
               </Popover.Button>
@@ -122,10 +120,9 @@ const Navbar = () => {
                 </Popover.Panel>
               </Transition>
             </Popover>
-            <Link href={"/training.html"} className="text-sm ">
+            <Link href={"/training.html"} className="text-sm text-white hover:text-gray-300">
               Aprende más!
             </Link>
-
             {isLoggedIn && currentPath === "/reports" ? (
               <span
                 onClick={() => logoutUser()}
@@ -134,12 +131,11 @@ const Navbar = () => {
                 Cerrar Sesión
               </span>
             ) : (
-              <Link href={"/reports.html"} className="text-sm ">
+              <Link href={"/reports.html"} className="text-sm text-white hover:text-gray-300">
                 Reportes
               </Link>
             )}
-
-            <Link href={"/contact.html"} className="text-sm ">
+            <Link href={"/contact.html"} className="text-sm text-white hover:text-gray-300">
               Contacto
             </Link>
           </Popover.Group>
@@ -154,7 +150,7 @@ const Navbar = () => {
           <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href={"/"} className="-m-1.5 p-1.5">
-                <span className="sr-only">Seguridad ESPE</span>
+                <span className="sr-only">Community Safe</span>
                 <img
                   className="h-8 w-auto"
                   src="/communitySafe/images/logo_preview_rev_1.png"
@@ -189,7 +185,7 @@ const Navbar = () => {
                     href={"/filosofia.html"}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Filosofia
+                    Filosofía
                   </Link>
                   <Link
                     href={"/reports.html"}

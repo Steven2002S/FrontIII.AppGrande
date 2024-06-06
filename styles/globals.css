@@ -67,7 +67,7 @@ header {
     top: 0;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 4px 6px -1px rgba(5, 96, 8, 0.479), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(162, 167, 162, 0.479), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
 .bg-color-espe{
@@ -97,7 +97,7 @@ header {
     color: #002e6a;
 }
 .text-color-secundario {
-    color: #676cfa;
+    color: #147445;
 }
 .text-color-espe {
     color: #147445;
@@ -111,15 +111,21 @@ header {
 .move-in {
     animation: moveIn 1s ease-in-out;
 }
+
+.borde{
+    border: 3px solid rgb(169, 217, 10);;
+}
+
 .bubbles-box { 
     position: absolute;   
     width: 100%;
-    height: 100%;
+    height: 85%;
+    
 }
 .bubbles-box .inner {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 35%;
 }
 .bubbles-box .inner img {
     position: absolute;
@@ -128,42 +134,49 @@ header {
 .bubbles-box .inner .bubble-1 {
     width: 100px;
     height: 100px;
-    top: 15%;
-    left: 8%;
+    top: 5%;
+    left: 3%;
+    
 }
 .bubbles-box .inner .bubble-2 {
     width: 150px;
     height: 150px;
-    top: 18%;
-    right: 14%;
+    top: 90%;
+    right: 12%;
     animation: otherside 2s ease-in-out infinite alternate;
+   
 }
 .bubbles-box .inner .bubble-3 {
     width: 150px;
     height: 150px;
-    top: 60%;
-    right: 40%;
+    top: 50%;
+    right: 79%;
     animation: otherside 2s ease-in-out infinite alternate;
+    
+    
 }
 .bubbles-box .inner .bubble-sm-1 {
     width: 50px;
     height: 50px;
-    top: 30%;
-    right: 50%;
+    top: 130%;
+    right: 30%;
+    
 }
 .bubbles-box .inner .bubble-sm-2 {
     width: 50px;
     height: 50px;
-    top: 40%;
-    right: 40%;
+    top: 150%;
+    right: 80%;
+    
 }
 .bubbles-box .inner .bubble-sm-3 {
     width: 50px;
     height: 50px;
-    top: 85%;
-    right: 20%;
+    top: 60%;
+    right: 10%;
     animation: otherside 2s ease-in-out infinite alternate;
 }
+
 
 @keyframes side {
     0% { transform: translateX(0); }
@@ -304,7 +317,7 @@ header {
   
   /* Estilos para el botón */
   .button {
-    background-color: #4f46e5;
+    background-color: #0c6a29;
     color: #fff;
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;

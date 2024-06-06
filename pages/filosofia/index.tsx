@@ -179,7 +179,7 @@ const FilosofiaPage = () => {
                 <li className="mr-2">
                   <a
                     href="#"
-                    className={"inline-block p-4 " + (openTab === 1 ? "text-color-secundario border-b-2 border-lime-500 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
+                    className={"inline-block p-4 " + (openTab === 1 ? "text-color-secundario border-b-2 border-lime-600 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
                     onClick={e => {
                       e.preventDefault();
                       setOpenTab(1);
@@ -191,7 +191,7 @@ const FilosofiaPage = () => {
                 <li className="mr-2">
                   <a
                     href="#"
-                    className={"inline-block p-4 " + (openTab === 2 ? "text-color-secundario border-b-2 border-lime-500 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")} aria-current="page"
+                    className={"inline-block p-4 " + (openTab === 2 ? "text-color-secundario border-b-2 border-lime-600 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")} aria-current="page"
                     onClick={e => {
                       e.preventDefault();
                       setOpenTab(2);
@@ -203,7 +203,7 @@ const FilosofiaPage = () => {
                 {/* <li className="mr-2">
                   <a
                     href="#"
-                    className={"inline-block p-4 " + (openTab === 3 ? "text-color-secundario border-b-2 border-lime-500 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
+                    className={"inline-block p-4 " + (openTab === 3 ? "text-color-secundario border-b-2 border-lime-600 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
                     onClick={e => {
                       e.preventDefault();
                       setOpenTab(3);
@@ -215,7 +215,7 @@ const FilosofiaPage = () => {
                 <li className="mr-2">
                   <a
                     href="#"
-                    className={"inline-block p-4 " + (openTab === 4 ? "text-color-secundario border-b-2 border-lime-500 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
+                    className={"inline-block p-4 " + (openTab === 4 ? "text-color-secundario border-b-2 border-lime-600 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
                     onClick={e => {
                       e.preventDefault();
                       setOpenTab(4);
@@ -227,7 +227,7 @@ const FilosofiaPage = () => {
                 <li className="mr-2">
                   <a
                     href="#"
-                    className={"inline-block p-4 " + (openTab === 5 ? "text-color-secundario border-b-2 border-lime-500 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
+                    className={"inline-block p-4 " + (openTab === 5 ? "text-color-secundario border-b-2 border-lime-600 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
                     onClick={e => {
                       e.preventDefault();
                       setOpenTab(5);
@@ -239,7 +239,7 @@ const FilosofiaPage = () => {
                 <li className="mr-2">
                   <a
                     href="#"
-                    className={"inline-block p-4 " + (openTab === 6 ? "text-color-secundario border-b-2 border-lime-500 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
+                    className={"inline-block p-4 " + (openTab === 6 ? "text-color-secundario border-b-2 border-lime-600 rounded-t-lg  active" : "border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300")}
                     onClick={e => {
                       e.preventDefault();
                       setOpenTab(6);

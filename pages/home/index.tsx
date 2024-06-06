@@ -122,9 +122,9 @@ const HomePage = () => {
   return (
     <>
       <div className="flex flex-col">
-        <section className="relative w-full h-full bg-color-lila flex justify-center overflow-hidden py-20 lg:pt-36 lg:pb-32">
+        <section  className="relative w-full  bg-color-lila flex justify-center overflow-hidden py-5 lg:pt-32 lg:pb-2">
           <Animate.FadeIn>
-            <div className="bubbles-box fade-in">
+            <div className="bubbles-box fade-in absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
               <div className="inner">
                 <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 1" className="bubble-1" />
                 <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 2" className="bubble-sm-1" />
@@ -135,26 +135,26 @@ const HomePage = () => {
               </div>
             </div>
           </Animate.FadeIn>
-          <div className="flex h-full w-full relative items-center">
+          <div className="flex h-full w-full relative items-center flex-col">
             <div className="container lg:px-32">
-              <div className="flex flex-col-reverse lg:flex-row items-center">
-                <div className="w-full lg:w-1/2 px-5 h-full">
+              <div className="flex flex-col items-center">
+                <div className="w-full px-5 h-full">
                   <Animate.FadeUp>
-                    <div className="bg-gray-200 rounded-lg p-8 w-full md:text-left md:pr-10 shadow-lg fade-in">
-                      <h1 className="title mb-4 text-3xl font-bold">
-                        Por una comunidad segura
+                    <div className="bg-color-espe bg-opacity-75 rounded-lg p-8 w-full text-center shadow-lg fade-in">
+                      <h1 className="title mb-4 text-3xl font-bold text-white">
+                        Community Safe
                       </h1>
-                      <p className="leading-relaxed mb-6" style={{ textAlign: "justify" }}>
-                        Donde las personas se protegen mutuamente, se apoyan y se preocupan por el bienestar de todos.
+                      <p className="leading-relaxed mb-6 text-white" style={{ textAlign: "justify" }}>
+                        Aplicación Web y Móvil para la comunidad donde las personas se protegen mutuamente, se apoyan y se preocupan por el bienestar de todos.
                         Únete a nuestra aplicación y forma parte de Community Safe. Juntos, construyamos una comunidad más segura.
                       </p>
                     </div>
                   </Animate.FadeUp>
                 </div>
-                <div className="w-full lg:w-1/2 h-full overflow-hidden">
+                <div className="w-full h-full overflow-hidden mt-8">
                   <Animate.MoveIn>
-                    <div className="flex h-full justify-center">
-                      <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716391990/Img_CommunitySafe/Smartphone_Sale_Instagram_Story_qqzk47.png" width={500} height={500} className="object-contain move-in" alt="logo" />
+                    <div className="flex  h-full justify-center">
+                      <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1717640119/Img_CommunitySafe/Smartphone_Sale_Instagram_Story_qqzk47.png" width={400} height={400} className="object-contain move-in" alt="logo" />
                     </div>
                   </Animate.MoveIn>
                 </div>
@@ -162,6 +162,8 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+
+
 
         <section className="bg-color-secundario pt-16 text-white">
           <div className="flex flex-col w-full overflow-hidden">
@@ -171,8 +173,8 @@ const HomePage = () => {
               </div>
               <div className="px-10 lg:px-32 flex justify-center mb-12">
                 <video controls className="w-full" style={{ maxWidth: "820px", height: "auto" }}>
-                  <source src="/communitySafe/images/COMMUNITY SAFE.mp4"
-                   type="video/mp4" />
+                  <source src="https://res.cloudinary.com/dfitq38dk/video/upload/v1717640896/Img_CommunitySafe/COMMUNITY_SAFE_wedrlf.mp4"
+                    type="video/mp4" />
                   Tu navegador no admite el elemento de video.
                 </video>
               </div>
@@ -226,10 +228,10 @@ const HomePage = () => {
             <Animate.FadeIn>
               <div className="lg:mb-8">
                 <h1 className="mb-6 md:mb-6 lg:mb-16 title">
-                  Características aplicación móvil
+                  Características de la aplicación móvil
                 </h1>
                 <div className="w-full flex flex-col gap-x-0 lg:flex-row lg:gap-x-10 gap-y-5">
-                  <div className="flex flex-col w-full lg:w-1/4">
+                  <div className="flex flex-col w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-lg">
                     <div className="mb-4 flex justify-center">
                       <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716313915/Img_CommunitySafe/ReportesLogo_ih84e8.png" />
                     </div>
@@ -239,21 +241,19 @@ const HomePage = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="flex flex-col w-full lg:w-1/4">
+                  <div className="flex flex-col w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-lg">
                     <div className="mb-4 flex justify-center">
                       <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314117/Img_CommunitySafe/sos_gnfxvv.png" />
-
                     </div>
                     <div className="px-2">
                       <span>
-                        Incorpora un botón de enviar ayuda &ldquo;Send Out Soccour&ldquo; (SOS) en la interfaz principal.
+                        Incorpora un botón de enviar ayuda "Send Out Soccour" (SOS) en la interfaz principal.
                       </span>
                     </div>
                   </div>
-                  <div className="flex flex-col w-full lg:w-1/5">
+                  <div className="flex flex-col w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-lg">
                     <div className="mb-4 flex justify-center">
                       <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314160/Img_CommunitySafe/logo_noticias_fsevwu.png" />
-
                     </div>
                     <div className="px-2">
                       <span>
@@ -261,11 +261,9 @@ const HomePage = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="flex flex-col w-full lg:w-1/5">
+                  <div className="flex flex-col w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-lg">
                     <div className="mb-4 flex justify-center">
-
-                    <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314275/Img_CommunitySafe/logo_grupos_kwikbx.png" />
-
+                      <img className="mb-1 " width="55" height="55" src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716314275/Img_CommunitySafe/logo_grupos_kwikbx.png" />
                     </div>
                     <div className="px-2">
                       <span>
@@ -273,8 +271,6 @@ const HomePage = () => {
                       </span>
                     </div>
                   </div>
-
-
                 </div>
               </div>
             </Animate.FadeIn>
