@@ -112,17 +112,17 @@ function AuthP() {
               </h2>
             </div>
             <div className="text-justify mt-5 ml-5">
-              <p className="text-lg text-gray-800 dark:text-gray-400">
-                ¡Bienvenido a Schoolar Security - Reportes!
+              <p className="text-lg text-gray-800 dark:text-gray-500">
+                ¡Bienvenido a Community Safe - Reportes!
               </p>
-              <p className="mt-3 text-md text-gray-700 dark:text-gray-400">
+              <p className="mt-3 text-md text-gray-700 dark:text-gray-500">
                 Nuestro sistema de inicio de sesión te permite acceder a los
                 reportes de incidentes en la comunidad. Para
                 continuar, por favor, ingresa tu correo electrónico de
                 administrador registrado. Esto te permitirá
                 acceder a las funciones de gestión de incidentes.
               </p>
-              <p className="mt-3 text-md text-gray-700 dark:text-gray-400">
+              <p className="mt-3 text-md text-gray-700 dark:text-gray-500">
                 En caso que no dispongas de un correo electrónico de
                 administrador y
                 necesitas acceso, por favor, comunícate con nosotros a través
@@ -234,7 +234,7 @@ function AuthP() {
                     <div>
                       <button
                         type="submit"
-                        className="w-full bg-color-primario hover:bg-primary-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white shadow"
+                        className="w-full bg-color-secundario hover:bg-primary-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white shadow"
                       >
                         Iniciar sesión
                       </button>

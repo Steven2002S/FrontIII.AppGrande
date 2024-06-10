@@ -42,12 +42,13 @@ const Navbar = () => {
           aria-label="Global"
         >
           <div className="hidden lg:flex">
-            <Link href={"/"} className="-m-1.5 p-1.5">
+            <Link href={"/"} className="-m-1.5 p-0">
               <span className="flex text-white justify-center items-center">
                 <Image
-                  src="https://res.cloudinary.com/dfitq38dk/image/upload/v1715819232/Img_CommunitySafe/Logo_CommunitySafe_dkkwx9.png"
-                  width={200}
+                  src="https://res.cloudinary.com/dfitq38dk/image/upload/v1717990226/Img_CommunitySafe/Logo_Blanco_V2.png"
                   height={35}
+                  width={200}
+                  
                   alt="logo"
                   className="mr-3 rounded-full pl-2"
                 />

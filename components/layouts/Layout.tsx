@@ -19,9 +19,9 @@ export const Layout: FC<Props> = ({ children, title }) => {
           <meta name="author" content="Universidad de Fuerzas Armadas ESPE" />
           <meta
             name="description"
-            content={`Información sobre Seguridad ESPE ${title}`}
+            content={`Información sobre Community Safe ${title}`}
           />
-          <meta name="keywords" content={`${title}, Seguridad, ESPE`} />
+          <meta name="keywords" content={`${title}, Comunnity Safe, ESPE`} />
           <link rel="icon" href="/communitySafe/favicon.ico" type="image/x-icon" />
 
         </Head>

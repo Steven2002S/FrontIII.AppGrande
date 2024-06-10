@@ -122,7 +122,7 @@ const HomePage = () => {
   return (
     <>
       <div className="flex flex-col">
-        <section  className="relative w-full  bg-color-lila flex justify-center overflow-hidden py-5 lg:pt-32 lg:pb-2">
+        <section  className="relative w-full  bg-color-lila flex justify-center overflow-hidden py-5 lg:pt-20 lg:pb-2">
           <Animate.FadeIn>
             <div className="bubbles-box fade-in absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
               <div className="inner">
@@ -136,11 +136,11 @@ const HomePage = () => {
             </div>
           </Animate.FadeIn>
           <div className="flex h-full w-full relative items-center flex-col">
-            <div className="container lg:px-32">
+            <div className="container lg:px-16">
               <div className="flex flex-col items-center">
                 <div className="w-full px-5 h-full">
                   <Animate.FadeUp>
-                    <div className="bg-color-espe bg-opacity-75 rounded-lg p-8 w-full text-center shadow-lg fade-in">
+                    <div className="bg-color-espe bg-opacity-75 rounded-lg p-6 w-full text-center shadow-lg fade-in">
                       <h1 className="title mb-4 text-3xl font-bold text-white">
                         Community Safe
                       </h1>

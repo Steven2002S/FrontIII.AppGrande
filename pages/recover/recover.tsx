@@ -121,7 +121,7 @@ function RecoverPage() {
             </div>
             <div className="text-justify mt-5 ml-5">
               <p className="text-lg text-gray-800 dark:text-gray-400">
-                ¡Bienvenido a Schoolar Security - Reportes!
+                ¡Bienvenido a Community Safe - Reportes!
               </p>
               <p className="mt-3 text-md text-gray-700 dark:text-gray-400">
                 Nuestro sistema de inicio de sesión te permite acceder a los
