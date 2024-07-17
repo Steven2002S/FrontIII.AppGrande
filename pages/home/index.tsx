@@ -126,12 +126,12 @@ const HomePage = () => {
           <Animate.FadeIn>
             <div className="bubbles-box fade-in absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
               <div className="inner">
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 1" className="bubble-1" />
+                {/* <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 1" className="bubble-1" />
                 <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 2" className="bubble-sm-1" />
                 <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 3" className="bubble-2" />
                 <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 4" className="bubble-sm-2" />
                 <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 5" className="bubble-3" />
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 6" className="bubble-sm-3" />
+                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 6" className="bubble-sm-3" /> */}
               </div>
             </div>
           </Animate.FadeIn>

@@ -105,7 +105,7 @@ const HeatmapChart = (ciudad: any, barrio: any, titulo: any, anio: any, mes: any
     }, [ciudadSelected]);
  
     const obtenerMapaCalor = () => {
-        axios.post('http://192.188.58.82:3000/api/reportes/obtenerMapaCalor', { ciudad, barrio, titulo, anio, mes, dia, horaInicio, horaFin })
+        axios.post('http://10.3.1.203:3000/api/reportes/obtenerMapaCalor', { ciudad, barrio, titulo, anio, mes, dia, horaInicio, horaFin })
             .then(response => {
                 sethHeatmapData(response.data.data.heatmapData)
                 setHeatmapOptions({

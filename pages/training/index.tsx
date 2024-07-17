@@ -32,7 +32,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 6: Añade 3 contactos en este apartado, asegurándote de que la información ingresada sea correcta."
 
                 ],
-                videoUrl: "https://res.cloudinary.com/dfitq38dk/video/upload/v1717640896/Img_CommunitySafe/COMMUNITY_SAFE_wedrlf.mp4",
+                videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188468/paxhihjpnks0jzn6frht.mp4",
                 formLink: "https://docs.google.com/forms/d/e/1FAIpQLScn8ln--88adsqW9pZm6TEIBEDsFlZZLLui_0BfVovsTxDiSg/viewform",
                 bgColor: "bg-gray-100"
               },
@@ -40,11 +40,11 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                 id: 2,
                 title: "Actividad 2: Registro y Configuración",
                 steps: [
-                  "Paso 1: Abrir el aaaaaaaplicativo.",
+                  "Paso 1: Abrir el aplicativo.",
                   "Paso 2: Completar el formulario de registro.",
                   "Paso 3: Configurar las preferencias iniciales."
                 ],
-                videoUrl: "https://res.cloudinary.com/dfitq38dk/video/upload/v1717640896/Img_CommunitySafe/COMMUNITY_SAFE_wedrlf.mp4",
+                videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188755/t30h6zu6tkpquwzprqgn.mp4",
                 formLink: "https://example.com/form2",
                 bgColor: "bg-gray-200"
               },
@@ -56,7 +56,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 2: Explorar las funcionalidades principales.",
                   "Paso 3: Realizar una tarea básica."
                 ],
-                videoUrl: "https://res.cloudinary.com/dfitq38dk/video/upload/v1717640896/Img_CommunitySafe/COMMUNITY_SAFE_wedrlf.mp4",
+                videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188758/hdvyt1csz6ffziamdtgl.mp4",
                 formLink: "https://example.com/form3",
                 bgColor: "bg-gray-300"
               },
@@ -68,7 +68,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 2: Explorar las funcionalidades principales.",
                   "Paso 3: Realizar una tarea básica."
                 ],
-                videoUrl: "https://res.cloudinary.com/dfitq38dk/video/upload/v1717640896/Img_CommunitySafe/COMMUNITY_SAFE_wedrlf.mp4",
+                videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188759/orfg0ud7oflwhrpkkjkm.mp4",
                 formLink: "https://example.com/form3",
                 bgColor: "bg-gray-300"
               }
