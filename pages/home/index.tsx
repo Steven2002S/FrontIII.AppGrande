@@ -151,13 +151,13 @@ const HomePage = () => {
                     </div>
                   </Animate.FadeUp>
                 </div>
-                <div className="w-full h-full overflow-hidden mt-8">
-                  <Animate.MoveIn>
+                {/* <div className="w-full h-full overflow-hidden mt-8">
+                  {/* <Animate.MoveIn>
                     <div className="flex  h-full justify-center">
                       <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1717640119/Img_CommunitySafe/Smartphone_Sale_Instagram_Story_qqzk47.png" width={400} height={400} className="object-contain move-in" alt="logo" />
                     </div>
-                  </Animate.MoveIn>
-                </div>
+                  </Animate.MoveIn> *
+                </div> */}
               </div>
             </div>
           </div>
