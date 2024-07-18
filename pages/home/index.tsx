@@ -117,27 +117,22 @@ const Animate = {
   MoveIn,
   MoveRight
 };
-
 const HomePage = () => {
   return (
     <>
       <div className="flex flex-col">
-        <section  className="relative w-full  bg-color-lila flex justify-center overflow-hidden py-5 lg:pt-20 lg:pb-2">
+        <section className="relative w-full bg-color-lila flex justify-center overflow-hidden py-5 lg:pt-20 lg:pb-2">
           <Animate.FadeIn>
             <div className="bubbles-box fade-in absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
               <div className="inner">
-                {/* <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 1" className="bubble-1" />
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 2" className="bubble-sm-1" />
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 3" className="bubble-2" />
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 4" className="bubble-sm-2" />
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 5" className="bubble-3" />
-                <img src="https://res.cloudinary.com/dfitq38dk/image/upload/v1716307806/Img_CommunitySafe/Logo_sinFondo_bllni6.png" alt="Shield 6" className="bubble-sm-3" /> */}
+                {/* Contenido de burbujas comentado */}
               </div>
             </div>
           </Animate.FadeIn>
           <div className="flex h-full w-full relative items-center flex-col">
             <div className="container lg:px-16">
               <div className="flex flex-col items-center">
+                {/* Primer contenedor comentado
                 <div className="w-full px-5 h-full">
                   <Animate.FadeUp>
                     <div className="bg-color-espe bg-opacity-75 rounded-lg p-6 w-full text-center shadow-lg fade-in">
@@ -151,25 +146,23 @@ const HomePage = () => {
                     </div>
                   </Animate.FadeUp>
                 </div>
-                {/* <div className="w-full h-full overflow-hidden mt-8">
-                  {/* <Animate.MoveIn>
-                    <div className="flex  h-full justify-center">
-                      <Image src="https://res.cloudinary.com/dfitq38dk/image/upload/v1717640119/Img_CommunitySafe/Smartphone_Sale_Instagram_Story_qqzk47.png" width={400} height={400} className="object-contain move-in" alt="logo" />
-                    </div>
-                  </Animate.MoveIn> *
-                </div> */}
+                */}
               </div>
             </div>
           </div>
         </section>
 
-
-
-        <section className="bg-color-secundario pt-16 text-white">
+        <section className="bg-color-secundario pt-4 text-white">
           <div className="flex flex-col w-full overflow-hidden">
             <Animate.FadeIn>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 px-4">
                 <h1 className="text-center title">Community Safe  <br /></h1> <h1 className="text-2xl">Por comunidades seguras</h1>
+                <div className="max-w-3xl mx-auto mt-4">
+                  <p className="leading-relaxed mb-6 text-white" style={{ textAlign: "justify" }}>
+                    Aplicación Web y Móvil para la comunidad donde las personas se protegen mutuamente, se apoyan y se preocupan por el bienestar de todos.
+                    Únete a nuestra aplicación y forma parte de Community Safe. Juntos, construyamos una comunidad más segura.
+                  </p>
+                </div>
               </div>
               <div className="px-10 lg:px-32 flex justify-center mb-12">
                 <video controls className="w-full" style={{ maxWidth: "820px", height: "auto" }}>
@@ -222,6 +215,7 @@ const HomePage = () => {
             </Animate.MoveIn>
           </div>
         </section>
+
 
         <section className="w-full">
           <div className="container lg:py-12 md:py-8 py-4 px-10 lg:px-19 text-center">
