@@ -33,7 +33,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
 
                 ],
                 videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188468/paxhihjpnks0jzn6frht.mp4",
-                formLink: "https://docs.google.com/forms/d/e/1FAIpQLScn8ln--88adsqW9pZm6TEIBEDsFlZZLLui_0BfVovsTxDiSg/viewform",
+                formLink: "https://forms.gle/NES6n5cTbmS4sDFz7",
                 bgColor: "bg-gray-100"
               },
               {
@@ -45,7 +45,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 3: Configurar las preferencias iniciales."
                 ],
                 videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188755/t30h6zu6tkpquwzprqgn.mp4",
-                formLink: "https://example.com/form2",
+                formLink: "https://forms.gle/w6bhC4USYuVhewJn7",
                 bgColor: "bg-gray-200"
               },
               {
@@ -57,7 +57,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 3: Realizar una tarea básica."
                 ],
                 videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188758/hdvyt1csz6ffziamdtgl.mp4",
-                formLink: "https://example.com/form3",
+                formLink: "https://forms.gle/w1SvVsgZW813aFJ57",
                 bgColor: "bg-gray-300"
               },
               {
@@ -69,7 +69,7 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 3: Realizar una tarea básica."
                 ],
                 videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188759/orfg0ud7oflwhrpkkjkm.mp4",
-                formLink: "https://example.com/form3",
+                formLink: "https://forms.gle/BznhcwBwwcGesRKu7",
                 bgColor: "bg-gray-300"
               }
             ].map(section => (

@@ -6,7 +6,6 @@ import { text } from "stream/consumers";
 
 const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
   return (
-    // eslint-disable-next-line react/jsx-filename-extension
     <>
       <Layout title="Nuestro Equipo">
         <section className="text-gray-600 body-font">
@@ -15,7 +14,8 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 Miembros de nuestro equipo
               </h1>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  La Universidad de las Fuerzas Armadas ESPE es una institución
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+                La Universidad de las Fuerzas Armadas ESPE es una institución
                 académica reconocida por su excelencia en la formación de
                 profesionales altamente capacitados en diversas áreas del
                 conocimiento. Su compromiso con la calidad educativa, su
@@ -28,13 +28,12 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                 aplicación efectiva que contribuya a la seguridad y protección
                 de los habitantes. ¡Estamos comprometidos en crear un entorno
                 seguro y brindar soluciones innovadoras para enfrentar los
-                desafíos de seguridad en la provincia!</p>
+                desafíos de seguridad en la provincia!
+              </p>
             </div>
             <div className="flex flex-wrap m-2 justify-center">
 
-              <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500 ">
-                Docentes
-              </h3>
+              <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500 ">Docentes</h3>
               <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
                 <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/dmkvix7ds/image/upload/v1695635408/LuisCastillo_hg2kj1.png" />
@@ -58,6 +57,15 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/dmkvix7ds/image/upload/v1695635407/Edwin_Camino_xfm0xx.jpg" />
                   <div className="flex-grow">
                     <h2 className="text-gray-900 title-font font-medium">Edwin Camino</h2>
+                    <p className="text-gray-500">Docente de apoyo</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/nuevo-docente.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Atal Kumar</h2>
                     <p className="text-gray-500">Docente de apoyo</p>
                   </div>
                 </div>
@@ -102,7 +110,6 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                   </div>
                 </div>
               </div>
-
               <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
                 <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/dmkvix7ds/image/upload/v1695633551/Stefy_Erazo_pset76.jpg" />
@@ -121,7 +128,6 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                   </div>
                 </div>
               </div>
-
               <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
                 <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/dmkvix7ds/image/upload/v1695633551/Kevin_Azua_oqurju.png" />
@@ -165,7 +171,7 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                 <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                   <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://res.cloudinary.com/ddodvvqcq/image/upload/v1696952233/images/SteveenRiofrio.jpg" />
                   <div className="flex-grow">
-                    <h2 className="text-gray-900 title-font font-medium">Steeven Riofrío</h2>
+                  <h2 className="text-gray-900 title-font font-medium">Steeven Riofrío</h2>
                     <p className="text-gray-500">Estudiante</p>
                   </div>
                 </div>
@@ -180,10 +186,77 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
                 </div>
               </div>
 
+              <div className="w-full h-10"></div>
+              <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500">Estudiantes Desarrolladores WEB de Vinculación Fase III</h3>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-web-1.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Web 1</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-web-2.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Web 2</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-10"></div>
+              <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500">Estudiantes Desarrolladores Móvil de Vinculación Fase III</h3>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-movil-1.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Móvil 1</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-movil-2.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Móvil 2</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-movil-3.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Móvil 3</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-movil-4.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Móvil 4</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                  <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://ejemplo.com/estudiante-movil-5.jpg" />
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 title-font font-medium">Estudiante Móvil 5</h2>
+                    <p className="text-gray-500">Estudiante</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-
       </Layout>
     </>
   );
