@@ -13,7 +13,6 @@ import {
   UsersIcon,
   ExclamationTriangleIcon,
   InformationCircleIcon,
-
   NewspaperIcon,
   UserGroupIcon,
   UserPlusIcon
@@ -117,6 +116,45 @@ const Animate = {
   MoveIn,
   MoveRight
 };
+
+// New ImageCarousel component
+const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 3000); 
+
+    return () => clearInterval(intervalId); 
+  }, []);
+
+  return (
+    <div className="mx-auto" style={{ width: '1200px', height: '600px' }}> {/* Ajustar Dimensiones*/}
+      <div className="relative w-full h-full">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const HomePage = () => {
   return (
     <>
@@ -132,21 +170,7 @@ const HomePage = () => {
           <div className="flex h-full w-full relative items-center flex-col">
             <div className="container lg:px-16">
               <div className="flex flex-col items-center">
-                {/* Primer contenedor comentado
-                <div className="w-full px-5 h-full">
-                  <Animate.FadeUp>
-                    <div className="bg-color-espe bg-opacity-75 rounded-lg p-6 w-full text-center shadow-lg fade-in">
-                      <h1 className="title mb-4 text-3xl font-bold text-white">
-                        Community Safe
-                      </h1>
-                      <p className="leading-relaxed mb-6 text-white" style={{ textAlign: "justify" }}>
-                        Aplicación Web y Móvil para la comunidad donde las personas se protegen mutuamente, se apoyan y se preocupan por el bienestar de todos.
-                        Únete a nuestra aplicación y forma parte de Community Safe. Juntos, construyamos una comunidad más segura.
-                      </p>
-                    </div>
-                  </Animate.FadeUp>
-                </div>
-                */}
+                {/* Primer contenedor comentado */}
               </div>
             </div>
           </div>
@@ -216,7 +240,6 @@ const HomePage = () => {
           </div>
         </section>
 
-
         <section className="w-full">
           <div className="container lg:py-12 md:py-8 py-4 px-10 lg:px-19 text-center">
             <Animate.FadeIn>
@@ -268,59 +291,8 @@ const HomePage = () => {
                 </div>
               </div>
             </Animate.FadeIn>
-            {/* <Animate.FadeIn>
-              <br />
-              <div>
-                <h1 className="title mb-6 md:mb-6 lg:mb-8 ">
-                  Impactos esperados de la aplicación
-                </h1>
-                <div className="w-full flex flex-col gap-x-0 lg:flex-row lg:gap-x-10 gap-y-5">
-                  <div className="flex flex-col w-full lg:w-1/4">
-                    <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/communitySafe/images/comunidad.png" />
-                    </div>
-                    <div className="px-2">
-                      <span>
-                        Mantener a la comunidad informada a diario de los diferentes tipos de emergencias que ocurren regularmente.
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col w-full lg:w-1/4">
-                    <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="55" height="55" src="/communitySafe/images/estadisticas.png" />
-                    </div>
-                    <div className="px-2">
-                      <span>
-                        Enviar a la comunidad reportes estadísticos de seguridad relevantes, que incluyen información sobre las emergencias más frecuentes y sectores con mayor incidencias.                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col w-full lg:w-1/4">
-                    <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/communitySafe/images/smsimpacto.png" />
-                    </div>
-                    <div className="px-2">
-                      <span>
-                        Facilitar la comunicación entre los miembros de la comunidad a través de un sistema de mensajería.
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col w-full lg:w-1/4">
-                    <div className="mb-4 flex justify-center">
-                      <img className="mb-1 " width="60" height="60" src="/communitySafe/images/alarma.png" />
-                    </div>
-                    <div className="px-2">
-                      <span>
-                        Proporcionar notificaciones instantáneas al activar el SOS, asegurando una respuesta rápida y eficaz.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Animate.FadeIn> */}
           </div>
         </section>
-
-
 
         <section className="w-full">
           <Animate.FadeIn>
@@ -330,9 +302,6 @@ const HomePage = () => {
           </Animate.FadeIn>
           <div className="flex flex-wrap mt-5 ml-2 mr-2 text-center md:ml-5 md:mr-5 text-justify">
             <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
-              {/* <p>
-                En la Universidad de las Fuerzas Armadas ESPE Sede Santo Domingo, un grupo de docentes y los tesistas Vinicio Borja y Maria José Párraga expresaron su preocupación por la seguridad de la comunidad de Luz de América. Después de llevar a cabo encuestas en dicha comunidad con el objetivo de identificar sus necesidades técnicas, tomaron la decisión de desarrollar una aplicación denominada "Seguridad ESPE". Esta aplicación tiene como finalidad permitir a los usuarios reportar incidentes de seguridad en tiempo real a través de una plataforma web y una aplicación móvil.</p>
-             */}
               <p>
                 A inicios del mes de marzo del 2023, en la Universidad de las Fuerzas Armadas ESPE, Sede Santo Domingo de
                 los Tsáchilas, se da inicio a la Fase I del proyecto de vinculación  titulado "IMPLEMENTACIÓN DE
@@ -340,7 +309,7 @@ const HomePage = () => {
                 LOS TSÁCHILAS", donde un grupo de docentes en un trabajo colaborativo con estudiantes de la carrera de
                 Ingeniería en Tecnologías de la Información, se inició en la comunidad de la parroquia de Luz de América.
                 Para atender esta necesidad, se llevaron a cabo encuestas como parte de un muestreo con el fin de
-                identificar los incidentes más comunes. Estas encuestas revelaron diversas problemáticas de seguridad,
+                identificar los incidentes más comunes. Estas encuestas revelaron divers identificar los incidentes más comunes. Estas encuestas revelaron diversas problemáticas de seguridad,
                 incluyendo robos, vandalismo, desorden público y emergencias médicas, entre otras.
                 <br />
                 Con los datos recopilados en la Fase I, en el mes de mayo dos estudiantes de la carrera
@@ -348,16 +317,9 @@ const HomePage = () => {
                 web y móvil para la gestión de alertas de emergencia comunitaria bajo el enfoque de metodologías ágiles",
                 la misma sirvió como punto de partida para el desarrollo de la aplicación "Seguridad ESPE". La
                 información recopilada se empleó para diseñar funciones y servicios específicos en la aplicación.
-
               </p>
-
             </div>
             <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
-
-              {/* <p>
-                Con el tiempo, Seguridad ESPE se ha convertido en una herramienta esencial para mejorar la seguridad y fortalecer la comunidad. Basándose en las aplicaciones desarrolladas por los tesistas, se llevó a cabo la Fase II del proyecto de Vinculación con la Sociedad, denominado "IMPLEMENTACIÓN DE APLICACIONES WEB Y MÓVILES PARA LA GESTIÓN DE EMERGENCIAS COMUNITARIAS EN LA PROVINCIA DE SANTO DOMINGO DE LOS TSÁCHILAS". En esta ocasión, el enfoque se dirigió hacia las Unidades Educativas de las parroquias Puerto Limón y El Esfuerzo.</p>
-            */}
-
               <p>
                 La principal meta de esta aplicación fue fortalecer la seguridad de la comunidad, fomentando la comunicación,
                 coordinación y respuesta ante situaciones de emergencia, y aprovechando el uso de dispositivos móviles e internet.
@@ -367,36 +329,28 @@ const HomePage = () => {
                 II del Proyecto de Vinculación con la Sociedad, en esta fase, un grupo de diez estudiantes y tres docentes
                 de la UFA - ESPE Sede Santo Domingo de los Tsáchilas, recolectó datos mediante encuestas realizadas en
                 Unidades Educativas de la parroquia Puerto Limón y El Esfuerzo, estos datos se utilizaron como base para
-                desarrollar la aplicación <strong>"Schoolar Security”</strong>.
+                desarrollar la aplicación <strong>"Schoolar Security"</strong>.
                 <br />
                 El propósito principal de esta aplicación es administrar y gestionar incidentes en las unidades
                 educativas, comenzando con las parroquias asignadas. Estas aplicaciones proveen información en tiempo real
                 sobre los incidentes, a las autoridades de dichas instituciones, además de generar estadísticas que
                 facilitan la toma de decisiones futuras para mejorar la calidad de vida, comunicación, seguridad de
                 todos los integrantes de la comunidad.
-
               </p>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
-              <img
-                src="https://res.cloudinary.com/dfitq38dk/image/upload/v1698103740/integrantesFase1.webp"
-                width={500}
-                height={500}
-                alt="Primera foto"
-                className="mx-auto rounded" ></img>
+            <div className="w-full p-2 md:p-4">
+              <ImageCarousel
+                images={[
+                  "https://res.cloudinary.com/dfitq38dk/image/upload/v1698103740/integrantesFase1.webp",
+                  "https://res.cloudinary.com/dfitq38dk/image/upload/c_fill,h_1105/v1699587287/fotoFase_II.jpg",
+                  "https://example.com/path-to-your-third-image.jpg",
+                  "https://example.com/path-to-your-fourth-image.jpg"
+                ]}
+              />
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
-              <img
-                src="https://res.cloudinary.com/dfitq38dk/image/upload/c_fill,h_1105/v1699587287/fotoFase_II.jpg"
-                width={500}
-                height={500}
-                alt="Segunda foto"
-                className="mx-auto rounded" ></img>
-            </div>
-
           </div>
         </section>
-      </div >
+      </div>
     </>
   );
 };
