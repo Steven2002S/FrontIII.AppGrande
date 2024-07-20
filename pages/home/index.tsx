@@ -19,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from "next/link";
 
+// Hook personalizado para detectar si un elemento está en la pantalla
 function useElementOnScreen(ref: RefObject<Element>, rootMargin = "0px") {
   const [isIntersecting, setIsIntersecting] = useState(true);
   useEffect(() => {
@@ -40,6 +41,7 @@ function useElementOnScreen(ref: RefObject<Element>, rootMargin = "0px") {
   return isIntersecting;
 }
 
+// Componente para animar la entrada de elementos
 const AnimateIn: FC<PropsWithChildren<{ from: CSSProperties; to: CSSProperties, time: Number }>> = ({ from, to, time, children }) => {
   const ref = useRef<HTMLDivElement>(null);
   const onScreen = useElementOnScreen(ref);
@@ -66,6 +68,7 @@ const AnimateIn: FC<PropsWithChildren<{ from: CSSProperties; to: CSSProperties, 
   );
 };
 
+// Componentes de animación predefinidos
 const FadeIn: FC<PropsWithChildren> = ({ children }) => (
   <AnimateIn
     from={{ opacity: 0 }}
@@ -117,7 +120,7 @@ const Animate = {
   MoveRight
 };
 
-// New ImageCarousel component
+// Componente de carrusel de imágenes
 const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -128,14 +131,14 @@ const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
-    }, 3000); 
+    }, 3000);
 
-    return () => clearInterval(intervalId); 
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="mx-auto" style={{ width: '1200px', height: '600px' }}> {/* Ajustar Dimensiones*/}
-      <div className="relative w-full h-full">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
         {images.map((image, index) => (
           <div
             key={index}
@@ -146,7 +149,7 @@ const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
         ))}
@@ -163,14 +166,14 @@ const HomePage = () => {
           <Animate.FadeIn>
             <div className="bubbles-box fade-in absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
               <div className="inner">
-                {/* Contenido de burbujas comentado */}
+                {/* Contenido de burbujas */}
               </div>
             </div>
           </Animate.FadeIn>
           <div className="flex h-full w-full relative items-center flex-col">
             <div className="container lg:px-16">
               <div className="flex flex-col items-center">
-                {/* Primer contenedor comentado */}
+                {/* Primer contenedor */}
               </div>
             </div>
           </div>
@@ -294,51 +297,53 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="w-full">
+        <section className="w-full py-8 sm:py-12 lg:py-16">
           <Animate.FadeIn>
-            <h1 className="title mb-5 text-center md:mb-10 ml-10">
+            <h1 className="title mb-5 text-center md:mb-10">
               ¿De dónde nace?
             </h1>
           </Animate.FadeIn>
-          <div className="flex flex-wrap mt-5 ml-2 mr-2 text-center md:ml-5 md:mr-5 text-justify">
-            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
-              <p>
-                A inicios del mes de marzo del 2023, en la Universidad de las Fuerzas Armadas ESPE, Sede Santo Domingo de
-                los Tsáchilas, se da inicio a la Fase I del proyecto de vinculación  titulado "IMPLEMENTACIÓN DE
-                APLICACIONES WEB Y MÓVILES PARA LA GESTIÓN DE EMERGENCIAS COMUNITARIAS EN LA PROVINCIA DE SANTO DOMINGO DE
-                LOS TSÁCHILAS", donde un grupo de docentes en un trabajo colaborativo con estudiantes de la carrera de
-                Ingeniería en Tecnologías de la Información, se inició en la comunidad de la parroquia de Luz de América.
-                Para atender esta necesidad, se llevaron a cabo encuestas como parte de un muestreo con el fin de
-                identificar los incidentes más comunes. Estas encuestas revelaron divers identificar los incidentes más comunes. Estas encuestas revelaron diversas problemáticas de seguridad,
-                incluyendo robos, vandalismo, desorden público y emergencias médicas, entre otras.
-                <br />
-                Con los datos recopilados en la Fase I, en el mes de mayo dos estudiantes de la carrera
-                desarrollaron el proyecto de Unidad de Integración Curricular denominado "Desarrollo de una aplicación
-                web y móvil para la gestión de alertas de emergencia comunitaria bajo el enfoque de metodologías ágiles",
-                la misma sirvió como punto de partida para el desarrollo de la aplicación "Seguridad ESPE". La
-                información recopilada se empleó para diseñar funciones y servicios específicos en la aplicación.
-              </p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap -mx-4">
+              <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+                <p className="text-justify">
+                  A inicios del mes de marzo del 2023, en la Universidad de las Fuerzas Armadas ESPE, Sede Santo Domingo de
+                  los Tsáchilas, se da inicio a la Fase I del proyecto de vinculación  titulado "IMPLEMENTACIÓN DE
+                  APLICACIONES WEB Y MÓVILES PARA LA GESTIÓN DE EMERGENCIAS COMUNITARIAS EN LA PROVINCIA DE SANTO DOMINGO DE
+                  LOS TSÁCHILAS", donde un grupo de docentes en un trabajo colaborativo con estudiantes de la carrera de
+                  Ingeniería en Tecnologías de la Información, se inició en la comunidad de la parroquia de Luz de América.
+                  Para atender esta necesidad, se llevaron a cabo encuestas como parte de un muestreo con el fin de
+                  identificar los incidentes más comunes. Estas encuestas revelaron diversas problemáticas de seguridad,
+                  incluyendo robos, vandalismo, desorden público y emergencias médicas, entre otras.
+                  <br />
+                  Con los datos recopilados en la Fase I, en el mes de mayo dos estudiantes de la carrera
+                  desarrollaron el proyecto de Unidad de Integración Curricular denominado "Desarrollo de una aplicación
+                  web y móvil para la gestión de alertas de emergencia comunitaria bajo el enfoque de metodologías ágiles",
+                  la misma sirvió como punto de partida para el desarrollo de la aplicación "Seguridad ESPE". La
+                  información recopilada se empleó para diseñar funciones y servicios específicos en la aplicación.
+                </p>
+              </div>
+              <div className="w-full lg:w-1/2 px-4">
+                <p className="text-justify">
+                  La principal meta de esta aplicación fue fortalecer la seguridad de la comunidad, fomentando la comunicación,
+                  coordinación y respuesta ante situaciones de emergencia, y aprovechando el uso de dispositivos móviles e internet.
+                  La aplicación ofrece una solución innovadora en el ámbito de la protección ciudadana.
+                  <br />
+                  Basándonos en las aplicaciones desarrolladas anteriormente, a inicios de septiembre del 2023 inició la Fase
+                  II del Proyecto de Vinculación con la Sociedad, en esta fase, un grupo de diez estudiantes y tres docentes
+                  de la UFA - ESPE Sede Santo Domingo de los Tsáchilas, recolectó datos mediante encuestas realizadas en
+                  Unidades Educativas de la parroquia Puerto Limón y El Esfuerzo, estos datos se utilizaron como base para
+                  desarrollar la aplicación <strong>"Schoolar Security"</strong>.
+                  <br />
+                  El propósito principal de esta aplicación es administrar y gestionar incidentes en las unidades
+                  educativas, comenzando con las parroquias asignadas. Estas aplicaciones proveen información en tiempo real
+                  sobre los incidentes, a las autoridades de dichas instituciones, además de generar estadísticas que
+                  facilitan la toma de decisiones futuras para mejorar la calidad de vida, comunicación, seguridad de
+                  todos los integrantes de la comunidad.
+                </p>
+              </div>
             </div>
-            <div className="w-full md:w-1/2 lg:w-1/2 p-2 md:p-4">
-              <p>
-                La principal meta de esta aplicación fue fortalecer la seguridad de la comunidad, fomentando la comunicación,
-                coordinación y respuesta ante situaciones de emergencia, y aprovechando el uso de dispositivos móviles e internet.
-                La aplicación ofrece una solución innovadora en el ámbito de la protección ciudadana.
-                <br />
-                Basándonos en las aplicaciones desarrolladas anteriormente, a inicios de septiembre del 2023 inició la Fase
-                II del Proyecto de Vinculación con la Sociedad, en esta fase, un grupo de diez estudiantes y tres docentes
-                de la UFA - ESPE Sede Santo Domingo de los Tsáchilas, recolectó datos mediante encuestas realizadas en
-                Unidades Educativas de la parroquia Puerto Limón y El Esfuerzo, estos datos se utilizaron como base para
-                desarrollar la aplicación <strong>"Schoolar Security"</strong>.
-                <br />
-                El propósito principal de esta aplicación es administrar y gestionar incidentes en las unidades
-                educativas, comenzando con las parroquias asignadas. Estas aplicaciones proveen información en tiempo real
-                sobre los incidentes, a las autoridades de dichas instituciones, además de generar estadísticas que
-                facilitan la toma de decisiones futuras para mejorar la calidad de vida, comunicación, seguridad de
-                todos los integrantes de la comunidad.
-              </p>
-            </div>
-            <div className="w-full p-2 md:p-4">
+            <div className="mt-12">
               <ImageCarousel
                 images={[
                   "https://res.cloudinary.com/dfitq38dk/image/upload/v1698103740/integrantesFase1.webp",

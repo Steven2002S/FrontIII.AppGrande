@@ -1022,21 +1022,33 @@ const ReportsPage = () => {
         console.error(error);
       });
   };
-  const obtenerDatosCards = () => {
-    axios
-      .get("http://10.3.1.203:3000/api/reportes/obtenerDatosCards")
-      .then((response) => {
-        setPublicacionesRegistradas(
-          response.data.data.publicacionesRegistradas
-        );
-        setUsuariosRegistros(response.data.data.usuariosRegistros);
-        setPublicacionesDelMes(response.data.data.publicacionesDelMes);
-        setPublicacionesDelDia(response.data.data.publicacionesDelDia);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  useEffect(() => {
+    const obtenerDatosCards = () => {
+      axios
+        .get("http://10.3.1.203:3000/api/reportes/obtenerDatosCards")
+        .then((response) => {
+          setPublicacionesDelMes(response.data.data.publicacionesDelMes);
+          setPublicacionesDelDia(response.data.data.publicacionesDelDia);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+  
+    // Llamada inicial inmediata
+    obtenerDatosCards();
+  
+    // Pequeño retraso antes de iniciar el intervalo
+    const timeoutId = setTimeout(() => {
+      const interval = setInterval(obtenerDatosCards, 5000); // Actualiza cada 5 segundos
+  
+      // Limpiar el intervalo cuando el componente se desmonte
+      return () => clearInterval(interval);
+    }, 100); // 100 ms de retraso
+  
+    // Limpiar el timeout si el componente se desmonta antes de que se inicie el intervalo
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const obtenerCoordenadas = (
     ciudad: any,

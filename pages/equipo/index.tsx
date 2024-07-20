@@ -14,7 +14,7 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 Miembros de nuestro equipo
               </h1>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base" style={{ textAlign: "justify" }}>
                 La Universidad de las Fuerzas Armadas ESPE es una institución
                 académica reconocida por su excelencia en la formación de
                 profesionales altamente capacitados en diversas áreas del
@@ -32,6 +32,7 @@ const EquipoPage: FC<PropsWithChildren<{}>> = ({ }) => {
               </p>
             </div>
             <div className="flex flex-wrap m-2 justify-center">
+            
 
               <h3 className="w-full text-center sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-500 ">Docentes</h3>
               <div className="p-2 lg:w-1/3 md:w-1/2 w-full">

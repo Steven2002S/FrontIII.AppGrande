@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@types/js-cookie": "^3.0.4"
+    "@types/js-cookie": "^3.0.4",
+    "@types/react-date-range": "^1.4.9"
   }
 }
