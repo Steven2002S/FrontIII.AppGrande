@@ -343,8 +343,8 @@ const HomePage = () => {
                 images={[
                   "https://res.cloudinary.com/dfitq38dk/image/upload/v1698103740/integrantesFase1.webp",
                   "https://res.cloudinary.com/dfitq38dk/image/upload/c_fill,h_1105/v1699587287/fotoFase_II.jpg",
-                  "https://example.com/path-to-your-third-image.jpg",
-                  "https://example.com/path-to-your-fourth-image.jpg"
+                  "https://res.cloudinary.com/di090ggjn/image/upload/v1721434569/j2ppyorhkjgpgc9yyucm.jpg",
+                  "https://res.cloudinary.com/di090ggjn/image/upload/v1721434569/ixfkalnrrolhfhq43tmf.jpg"
                 ]}
               />
             </div>
