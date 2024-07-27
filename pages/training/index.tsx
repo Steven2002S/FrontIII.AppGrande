@@ -6,13 +6,13 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
   return (
     <>
       <Layout title="Capacítate">
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto">
+        <section className="text-gray-600 body-font min-h-screen flex flex-col">
+          <div className="container px-5 py-24 mx-auto flex-grow">
             <div className="flex flex-col text-center w-full mb-20">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 Capacítate con Nosotros
               </h1>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-justify">
                 Aquí aprenderás a utilizar el aplicativo móvil siguiendo nuestro mini taller virtual. Sigue el paso a paso,
                 primero reproduce cada video y no olvides subir tus capturas de pantalla para recibir el certificado al finalizar
                 el taller.
@@ -30,7 +30,6 @@ const NuevaPagina: FC<PropsWithChildren<{}>> = ({ }) => {
                   "Paso 4: Una vez completado el registro, toma una captura de pantalla que muestre que el proceso se realizó con éxito",
                   "Paso 5: Accede al apartado de 'Mis contactos de emergencia' dentro de la aplicación.",
                   "Paso 6: Añade 3 contactos en este apartado, asegurándote de que la información ingresada sea correcta."
-
                 ],
                 videoUrl: "https://res.cloudinary.com/di090ggjn/video/upload/v1721188468/paxhihjpnks0jzn6frht.mp4",
                 formLink: "https://forms.gle/NES6n5cTbmS4sDFz7",

@@ -142,9 +142,8 @@ const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
           >
             <img
               src={image}
@@ -179,13 +178,14 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="bg-color-secundario pt-4 text-white">
+        {/* Primer contenedor*/}
+        <section className="bg-white pt-4">
           <div className="flex flex-col w-full overflow-hidden">
             <Animate.FadeIn>
               <div className="text-center mb-12 px-4">
-                <h1 className="text-center title">Community Safe  <br /></h1> <h1 className="text-2xl">Por comunidades seguras</h1>
+                <h1 className="text-center title text-black">Community Safe  <br /></h1> <h1 className="text-2xl text-black">Por comunidades seguras</h1>
                 <div className="max-w-3xl mx-auto mt-4">
-                  <p className="leading-relaxed mb-6 text-white" style={{ textAlign: "justify" }}>
+                  <p className="leading-relaxed mb-6 text-black" style={{ textAlign: "justify" }}>
                     Aplicación Web y Móvil para la comunidad donde las personas se protegen mutuamente, se apoyan y se preocupan por el bienestar de todos.
                     Únete a nuestra aplicación y forma parte de Community Safe. Juntos, construyamos una comunidad más segura.
                   </p>
@@ -199,6 +199,12 @@ const HomePage = () => {
                 </video>
               </div>
             </Animate.FadeIn>
+          </div>
+        </section>
+
+        {/* Segundo contenedor*/}
+        <section className="bg-color-secundario pt-4 text-white">
+          <div className="flex flex-col w-full overflow-hidden">
             <Animate.FadeIn>
               <div className="text-center mb-10">
                 <h1 className="text-center title mb-2">Empieza ya!</h1>
@@ -321,25 +327,34 @@ const HomePage = () => {
                   web y móvil para la gestión de alertas de emergencia comunitaria bajo el enfoque de metodologías ágiles",
                   la misma sirvió como punto de partida para el desarrollo de la aplicación "Seguridad ESPE". La
                   información recopilada se empleó para diseñar funciones y servicios específicos en la aplicación.
+                  <br />
+                  La principal meta de esta aplicación fue fortalecer la seguridad de la comunidad, fomentando la comunicación,
+                  coordinación y respuesta ante situaciones de emergencia, y aprovechando el uso de dispositivos móviles e internet.
+                  La aplicación ofrece una solución innovadora en el ámbito de la protección ciudadana.
                 </p>
               </div>
               <div className="w-full lg:w-1/2 px-4">
                 <p className="text-justify">
-                  La principal meta de esta aplicación fue fortalecer la seguridad de la comunidad, fomentando la comunicación,
-                  coordinación y respuesta ante situaciones de emergencia, y aprovechando el uso de dispositivos móviles e internet.
-                  La aplicación ofrece una solución innovadora en el ámbito de la protección ciudadana.
-                  <br />
                   Basándonos en las aplicaciones desarrolladas anteriormente, a inicios de septiembre del 2023 inició la Fase
                   II del Proyecto de Vinculación con la Sociedad, en esta fase, un grupo de diez estudiantes y tres docentes
                   de la UFA - ESPE Sede Santo Domingo de los Tsáchilas, recolectó datos mediante encuestas realizadas en
                   Unidades Educativas de la parroquia Puerto Limón y El Esfuerzo, estos datos se utilizaron como base para
-                  desarrollar la aplicación <strong>"Schoolar Security"</strong>.
+                  desarrollar la aplicación <strong>"Schoolar Security"</strong>. El propósito principal de esta aplicación es
+                  administrar y gestionar incidentes en las unidades educativas, comenzando con las parroquias asignadas.
                   <br />
-                  El propósito principal de esta aplicación es administrar y gestionar incidentes en las unidades
-                  educativas, comenzando con las parroquias asignadas. Estas aplicaciones proveen información en tiempo real
-                  sobre los incidentes, a las autoridades de dichas instituciones, además de generar estadísticas que
-                  facilitan la toma de decisiones futuras para mejorar la calidad de vida, comunicación, seguridad de
-                  todos los integrantes de la comunidad.
+                  En el mes de enero del 2024, se dio inicio a la Fase III del Proyecto de Vinculación con la Sociedad en
+                  la Universidad de las Fuerzas Armadas ESPE, Sede Santo Domingo de los Tsáchilas. En esta fase, se desarrolló
+                  la aplicación <strong>"Community Safe"</strong>, un sistema más completo diseñado para gestionar
+                  emergencias en múltiples unidades educativas de la provincia. "Community Safe" integra y mejora las
+                  funcionalidades de las aplicaciones previas, permitiendo una gestión más eficiente y coordinada de
+                  incidentes en diferentes instituciones educativas.
+                  <br />
+                  Esta aplicación ofrece características avanzadas como alertas en tiempo real, análisis de datos, y una
+                  plataforma de comunicación directa entre las autoridades y la comunidad educativa. Su objetivo principal
+                  es proporcionar un entorno más seguro y protegido, facilitando una respuesta rápida y efectiva ante
+                  cualquier situación de emergencia. La implementación de "Community Safe" representa un avance significativo
+                  en el fortalecimiento de la seguridad comunitaria y en la mejora de la calidad de vida de los habitantes
+                  de Santo Domingo de los Tsáchilas.
                 </p>
               </div>
             </div>
