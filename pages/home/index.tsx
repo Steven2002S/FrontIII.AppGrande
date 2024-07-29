@@ -345,12 +345,12 @@ const HomePage = () => {
                   En el mes de enero del 2024, se dio inicio a la Fase III del Proyecto de Vinculación con la Sociedad en
                   la Universidad de las Fuerzas Armadas ESPE, Sede Santo Domingo de los Tsáchilas. En esta fase, se desarrolló
                   la aplicación <strong>"Community Safe"</strong>, un sistema más completo diseñado para gestionar
-                  emergencias en múltiples unidades educativas de la provincia. "Community Safe" integra y mejora las
+                  emergencias en la comunidad de Santo Domingo de los Tsáchilas. "Community Safe" integra y mejora las
                   funcionalidades de las aplicaciones previas, permitiendo una gestión más eficiente y coordinada de
-                  incidentes en diferentes instituciones educativas.
+                  incidentes en diferentes áreas de la comunidad.
                   <br />
                   Esta aplicación ofrece características avanzadas como alertas en tiempo real, análisis de datos, y una
-                  plataforma de comunicación directa entre las autoridades y la comunidad educativa. Su objetivo principal
+                  plataforma de comunicación directa entre las autoridades y la comunidad. Su objetivo principal
                   es proporcionar un entorno más seguro y protegido, facilitando una respuesta rápida y efectiva ante
                   cualquier situación de emergencia. La implementación de "Community Safe" representa un avance significativo
                   en el fortalecimiento de la seguridad comunitaria y en la mejora de la calidad de vida de los habitantes
@@ -361,7 +361,7 @@ const HomePage = () => {
             <div className="mt-12">
               <ImageCarousel
                 images={[
-                  "https://res.cloudinary.com/dfitq38dk/image/upload/v1698103740/integrantesFase1.webp",
+                  "https://res.cloudinary.com/di090ggjn/image/upload/v1722295536/wlath4p4wms08rfixrkf.jpg",
                   "https://res.cloudinary.com/dfitq38dk/image/upload/c_fill,h_1105/v1699587287/fotoFase_II.jpg",
                   "https://res.cloudinary.com/di090ggjn/image/upload/v1721434569/j2ppyorhkjgpgc9yyucm.jpg",
                   "https://res.cloudinary.com/di090ggjn/image/upload/v1721434569/ixfkalnrrolhfhq43tmf.jpg"
