@@ -55,7 +55,7 @@ interface DataUer {
   parroquia: string;
 }
 
-const baseUrl = "http://10.141.0.97:3000/api";
+const baseUrl = "http://10.3.1.203:3000/api";
 
 const defaultPosition = {
   lat: 35.7407872,
@@ -301,7 +301,7 @@ const ReportsPage = () => {
   /* ciudad */
   const obtenerciudades = () => {
     axios
-      .get("http://10.141.0.97:3000/api/reportes/obtenerCiudades") //api obtener ciudades
+      .get("http://10.3.1.203:3000/api/reportes/obtenerCiudades") //api obtener ciudades
       .then((response) => {
         console.log("obtenerUnidadesEducativas");
 
@@ -319,7 +319,7 @@ const ReportsPage = () => {
   const obtenerUnidadesEducativas = () => {
     axios
       .get(
-        "http://10.141.0.97:3000/api/reportes/obtenerUnidadesEducativas"
+        "http://10.3.1.203:3000/api/reportes/obtenerUnidadesEducativas"
       ) //api obtener ciudades
       .then((response) => {
         setUnidadEducativa(response.data.data);
@@ -344,7 +344,7 @@ const ReportsPage = () => {
 
   // const obtenerUnidadesEducativas = (ciudad: any) => {
   //   axios
-  //     .post("http://10.141.0.97:3000/api/reporte/obtenerUnidadesEducativas", { ciudad }) //api obtener ciudades
+  //     .post("http://10.3.1.203:3000/api/reporte/obtenerUnidadesEducativas", { ciudad }) //api obtener ciudades
   //     .then((response) => {
   //       setUnidadEducativa(response.data.data);
   //       console.log(response.data.data);
@@ -375,7 +375,7 @@ const ReportsPage = () => {
 
   const obtenerBarrios = (ciudad: any) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerBarrios", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerBarrios", {
         ciudad,
       }) //api obtener barrios de la provincia
       .then((response) => {
@@ -395,7 +395,7 @@ const ReportsPage = () => {
   };
   const obtenerEmergencias = (ciudad: any, barrio: any) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerEmergencias", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerEmergencias", {
         ciudad,
         barrio,
       })
@@ -416,7 +416,7 @@ const ReportsPage = () => {
 
   const obtenerAnios = (ciudad: any, barrio: any, titulo: any) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerAnios", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerAnios", {
         ciudad,
         barrio,
         titulo,
@@ -508,7 +508,7 @@ const ReportsPage = () => {
     unidadEducativa: any
   ) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerReporteBarras", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerReporteBarras", {
         ciudad,
         barrio,
         titulo,
@@ -576,7 +576,7 @@ const ReportsPage = () => {
     unidadEducativa: any
   ) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerReportePastel", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerReportePastel", {
         ciudad,
         barrio,
         titulo,
@@ -908,7 +908,7 @@ const ReportsPage = () => {
     unidadEducativa: any
   ) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerMapaCalor", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerMapaCalor", {
         ciudad,
         barrio,
         titulo,
@@ -1024,7 +1024,7 @@ const ReportsPage = () => {
   };
   const obtenerDatosCards = () => {
     axios
-      .get("http://10.141.0.97:3000/api/reportes/obtenerDatosCards")
+      .get("http://10.3.1.203:3000/api/reportes/obtenerDatosCards")
       .then((response) => {
         setPublicacionesRegistradas(
           response.data.data.publicacionesRegistradas
@@ -1037,7 +1037,13 @@ const ReportsPage = () => {
         console.error(error);
       });
   };
-
+  
+  // Llama a la función cada 5 segundos
+  setInterval(obtenerDatosCards, 5000);
+  
+  // Llama a la función inicialmente para cargar los datos al inicio
+  obtenerDatosCards();
+  
   const obtenerCoordenadas = (
     ciudad: any,
     barrio: any,
@@ -1049,7 +1055,7 @@ const ReportsPage = () => {
     unidadEducativa: any
   ) => {
     axios
-      .post("http://10.141.0.97:3000/api/reportes/obtenerCoordenadas", {
+      .post("http://10.3.1.203:3000/api/reportes/obtenerCoordenadas", {
         ciudad,
         barrio,
         titulo,
@@ -1070,7 +1076,7 @@ const ReportsPage = () => {
   const descargarExcel = () => {
     axios
       .post(
-        "http://10.141.0.97:3000/api/reportes/descargarXLSX",
+        "http://10.3.1.203:3000/api/reportes/descargarXLSX",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -1111,7 +1117,7 @@ const ReportsPage = () => {
 
     axios
       .post(
-        "http://10.141.0.97:3000/api/reportes/descargarPDF",
+        "http://10.3.1.203:3000/api/reportes/descargarPDF",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -1132,7 +1138,7 @@ const ReportsPage = () => {
         console.log(response.data);
 
         axios
-          .get("http://10.141.0.97:3000/api/documents", {
+          .get("http://10.3.1.203:3000/api/documents", {
             responseType: "arraybuffer",
           })
           .then((res) => {
@@ -1162,7 +1168,7 @@ const ReportsPage = () => {
   const verPDF = () => {
     axios
       .post(
-        "http://10.141.0.97:3000/api/reportes/descargarPDF",
+        "http://10.3.1.203:3000/api/reportes/descargarPDF",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
@@ -1195,7 +1201,7 @@ const ReportsPage = () => {
   const descargarCSV = () => {
     axios
       .post(
-        "http://10.141.0.97:3000/api/reportes/descargarCSV",
+        "http://10.3.1.203:3000/api/reportes/descargarCSV",
         {
           ciudad: selectedCiudad,
           barrio: selectedBarrio,
